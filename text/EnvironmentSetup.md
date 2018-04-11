@@ -7,7 +7,7 @@ Kotlinでプログラミングをするための環境構築を行い，
 
 ## 環境構築
 
-<details><summary>macOSの場合</summary><div>
+<details><summary>macOSの場合</summary><div>
 
 1. **Homebrew:** 
 ターミナルを起動して以下を実行し，Homebrewをインストールする．
@@ -28,7 +28,7 @@ IntelliJは統合開発環境の一つで，プログラミングをするため
 
 </div></details>
 
-<details><summary>Windowsの場合</summary><div>
+<details><summary>Windowsの場合</summary><div>
 </div></details>
 
 <details><summary>Ubuntuの場合</summary><div>
@@ -63,6 +63,29 @@ IntelliJは統合開発環境の一つで，プログラミングをするため
 
 ## サンプルプログラム
 
+以下のファイルを作成します．
+
+`src/jumoaku/programingintroduction/page1/Sample1.kt`
+```kt
+// コメント
+/*
+    コメント
+*/
+
+package jumpaku.programingintroduction.page1 //パッケージ宣言
+
+fun main(args: Array<String>) { //main関数の定義
+    println("Getting started programming.") //println関数の呼び出し
+}
+```
+
+緑の三角ボタンを押してこのプログラムを実行(Run)します．
+すると以下の英文が出力されます．
+
+```
+Getting started programming.
+```
+
 ### パッケージ
 
 ### 関数
@@ -70,15 +93,3 @@ IntelliJは統合開発環境の一つで，プログラミングをするため
 ### 標準出力
 
 ### 文字列
-
-### エスケープシーケンス
-
-## 練習
-
-### サンプルプログラムの編集
-
-### 新規プロジェクトの作成
-
-
-
-
