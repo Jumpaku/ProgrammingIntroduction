@@ -1,20 +1,14 @@
 package jumpaku.programming.classes
 
 // Personクラスの定義
-class Person(name: String, height: Double, mass: Double) {// コンストラクタの引数
+class Person2(// コンストラクタの引数で直接フィールドを初期化
+        val name: String,
+        val height: Double,
+        val mass: Double) {
 
     // フィールド
-    val name: String
-    val height: Double
-    val mass: Double
     val bmiHigh = 25.0
     val bmiLow = 18.5
-
-    init {// コンストラクタの処理
-        this.name = name
-        this.height = height
-        this.mass = mass
-    }
 
     // メソッド
     fun computeBmi(): Double {
@@ -28,7 +22,7 @@ class Person(name: String, height: Double, mass: Double) {// コンストラク�
 
 fun main(args: Array<String>) {
     // Personクラスのコンストラクの呼び出し，インスタンスの生成
-    val mpcMan = Person("MPC-Man", 1.728, 51.7)
+    val mpcMan = Person2("MPC-Man", 1.728, 51.7)
     println("変数名 : mpcMan")
     println("型 : ${mpcMan::class}")
     // フィールドの参照とメソッドの呼び出し
