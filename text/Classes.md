@@ -15,65 +15,51 @@
 package jumpaku.programming.classes
 
 // Personクラスの定義
-class Person(name: String, height: Double, mass: Double) {// コンストラクタの引数
+class Person(// コンストラクタの引数
+        name: String,
+        age: Int) {
 
-    // フィールド
-    val name: String
-    val height: Double
-    val mass: Double
-    val bmiHigh = 25.0
-    val bmiLow = 18.5
+    // フィールドの定義
+    val name: String = name// フィールドの初期化
+    val age: Int = age// フィールドの初期化
 
-    init {// コンストラクタの処理
-        this.name = name
-        this.height = height
-        this.mass = mass
-    }
-
-    // メソッド
-    fun computeBmi(): Double {
-        return mass/(height*height)
-    }
-    fun isNormalBmi(): Boolean {
-        val bmi = computeBmi()
-        return bmiLow <= bmi && bmi <= bmiHigh
+    // メソッドの定義
+    fun introduce() {
+        println("My name is $name. I am $age years old.")
     }
 }
 
 fun main(args: Array<String>) {
-    val mpcMan = Person("MPC-Man", 1.728, 51.7)
-    println("変数名 : mpcMan")
-    println("型 : ${mpcMan::class}")
-    println("${mpcMan.name}'s BMI is normal: ${mpcMan.isNormalBmi()}")
+    // Personクラスのコンストラクの呼び出し，インスタンスの生成
+    val mpcMan = Person("MPC-Man", 24)
+    println("mpcManの型 : ${mpcMan::class}")
+    // フィールドの参照
+    println("mpcMan.name = ${mpcMan.name}")
+    println("mpcMan.age = ${mpcMan.age}")
+    // メソッドの呼び出し
+    mpcMan.introduce()
 }
 ```
 このプログラムの実行結果は以下のようになります．
 ```
-変数名 : mpcMan
-型 : class jumpaku.programming.classes.Person
-MPC-Man's BMI is normal: false
+mpcManの型 : class jumpaku.programming.classes.Person
+MPC-Man's height = 1.728
+MPC-Man's mass = 51.7
 ```
-
 
 ## クラスの定義
 
 クラスを利用するには以下のようにクラスを定義します．
 ```kt
 class クラス名(コンストラクタの引数,・・・) {
-    メンバ
+    フィールドやメソッドなど
 }
 ```
-`メンバ` にはフィールド，メソッド，コンストラクタの処理などを書きます．
 フィールドは変数と同じように書きます．
 メソッドは関数と同じように書きます．
-コンストラクタの処理は以下のように書きます．
-```kt
-init{
-    コンストラクタの処理
-}
-```
-コンストラクタは `クラス名` の後に書かれた引数を受け取り，インスタンスと返します．
-コンストラクタの関数名と返り値の型は `クラス名` と同時になります．
+コンストラクタは `クラス名` の後に書かれた引数を受け取り，インスタンスと返す関数です．
+コンストラクタの関数名と返り値の型は `クラス名` と同じになります．
+コンストラクタはフィールドの初期化を行います．
 
 ## クラスの実体化
 
@@ -96,62 +82,19 @@ val 変数 = クラス名(引数, ・・・)
 クラスの内部からインスタンス自身のフィールドを参照したり，メソッドを呼び出したりするには `this.フィールド名`, `this.メソッド名(引数, ・・・)` と書きます．
 `this` はクラスの内部でインスタンス自身を表すもので，紛らわしくない場合は省略できます．
 
-## サンプルプログラム 2
-```kt
-package jumpaku.programming.classes
 
+サンプルプログラム1の `Person` クラスは以下のように省略して書くことができます．
+サンプルプログラム2ではコンストラクタが受け取った引数が直接フィールドの初期値となります．
+```kt
 // Personクラスの定義
 class Person(// コンストラクタの引数で直接フィールドを初期化
         val name: String,
-        val height: Double,
-        val mass: Double) {
+        val age: Int) {
 
-    // フィールド
-    val bmiHigh = 25.0
-    val bmiLow = 18.5
-
-    // メソッド
-    fun computeBmi(): Double {
-        return mass/(height*height)
+    // メソッドの定義
+    fun introduce() {
+        println("My name is $name. I am $age years old.")
     }
-    fun isNormalBmi(): Boolean {
-        val bmi = computeBmi()
-        return bmiLow <= bmi && bmi <= bmiHigh
-    }
-}
-
-fun main(args: Array<String>) {
-    // Personクラスのコンストラクの呼び出し，インスタンスの生成
-    val mpcMan = Person("MPC-Man", 1.728, 51.7)
-    println("変数名 : mpcMan")
-    println("型 : ${mpcMan::class}")
-    // フィールドの参照とメソッドの呼び出し
-    println("${mpcMan.name}'s BMI is normal: ${mpcMan.isNormalBmi()}")
-}
-```
-このプログラムの実行結果は上のプログラムと同じです．
-
-## クラス定義の省略
-
-サンプルプログラム1のクラス定義はサンプルプログラム2のように省略することができます．
-サンプルプログラム2ではコンストラクタが受け取った引数が直接フィールドの初期値となります．
-
-Kotlinでは以下の3つは同じクラスを表し，互いに書き換えることができます．
-```kt
-class Sample(name: String) {
-    val name: String
-    init {
-        this.name = name
-    }
-}
-```
-```kt
-class Sample(name: String) {
-    val name: String = name
-}
-```
-```kt
-class Sample(val name: String) {
 }
 ```
 

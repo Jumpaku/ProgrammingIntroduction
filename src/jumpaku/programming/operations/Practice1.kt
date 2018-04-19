@@ -1,4 +1,4 @@
-package jumpaku.programming.variablesandoperators
+package jumpaku.programming.operations
 
 fun main(args: Array<String>) {
     val name = "MPC-Man"

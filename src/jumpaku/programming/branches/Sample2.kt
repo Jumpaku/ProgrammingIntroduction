@@ -1,33 +1,25 @@
 package jumpaku.programming.branches
 
 /**
- * Int型の数値を文字列に変換する.
- * ただし, 引数が3の倍数か3の付く数字なら文字列の末尾に"!"を付加する.
+ * 引数が負の数なら"負", 正の数なら"正", 0なら"零"を返す.
  * @param number 整数
  * @return 変換後の文字列
-  */
-fun nabeatsu(number: Int): String {
-    // IntクラスのtoStringメソッドを呼び出し，数値を文字列に変換
-    val numberString = number.toString()
+ */
+fun signStringWhen(number: Int): String {
     // 条件によって異なる値で変数を初期化
-    val end = when {
-        // 3の倍数なら末尾に付加する文字を"!"にする
-        number%3 == 0 -> "!"
-        // 3の倍数なら末尾に付加する文字を"!"にする
-        // Stringクラスのcontainsメソッドを呼び出し，
-        // numberStringが"3"を含むかどうかを調べる
-        numberString.contains("3") -> "!"
-        // どの条件も満たさないなら末尾に付加する文字を空にする
-        else -> ""
+    val string = when {
+        number < 0 -> "負"// 負の数の場合
+        number > 0 -> "正"// 正の数の場合
+        else -> "零"// それ以外の場合
     }
-    return numberString + end
+    return string
 }
 
 fun main(args: Array<String>) {
-    val a = 11
-    val b = 12
-    val c = 13
-    println("$a -> ${nabeatsu(a)}")
-    println("$b -> ${nabeatsu(b)}")
-    println("$c -> ${nabeatsu(c)}")
+    val a = -10
+    val b = 0
+    val c = 5
+    println("$a -> ${signStringWhen(a)}")
+    println("$b -> ${signStringWhen(b)}")
+    println("$c -> ${signStringWhen(c)}")
 }

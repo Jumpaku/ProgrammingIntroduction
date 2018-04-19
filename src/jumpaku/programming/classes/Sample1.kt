@@ -1,36 +1,27 @@
 package jumpaku.programming.classes
 
 // Personクラスの定義
-class Person(name: String, height: Double, mass: Double) {// コンストラクタの引数
+class Person(// コンストラクタの引数
+        name: String,
+        age: Int) {
 
-    // フィールド
-    val name: String
-    val height: Double
-    val mass: Double
-    val bmiHigh = 25.0
-    val bmiLow = 18.5
+    // フィールドの定義
+    val name: String = name// フィールドの初期化
+    val age: Int = age// フィールドの初期化
 
-    init {// コンストラクタの処理
-        this.name = name
-        this.height = height
-        this.mass = mass
-    }
-
-    // メソッド
-    fun computeBmi(): Double {
-        return mass/(height*height)
-    }
-    fun isNormalBmi(): Boolean {
-        val bmi = computeBmi()
-        return bmiLow <= bmi && bmi <= bmiHigh
+    // メソッドの定義
+    fun introduce() {
+        println("My name is $name. I am $age years old.")
     }
 }
 
 fun main(args: Array<String>) {
     // Personクラスのコンストラクの呼び出し，インスタンスの生成
-    val mpcMan = Person("MPC-Man", 1.728, 51.7)
-    println("変数名 : mpcMan")
-    println("型 : ${mpcMan::class}")
-    // フィールドの参照とメソッドの呼び出し
-    println("${mpcMan.name}'s BMI is normal: ${mpcMan.isNormalBmi()}")
+    val mpcMan = Person("MPC-Man", 24)
+    println("mpcManの型 : ${mpcMan::class}")
+    // フィールドの参照
+    println("mpcMan.name = ${mpcMan.name}")
+    println("mpcMan.age = ${mpcMan.age}")
+    // メソッドの呼び出し
+    mpcMan.introduce()
 }

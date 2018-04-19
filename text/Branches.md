@@ -7,35 +7,29 @@
 package jumpaku.programming.branches
 
 /**
- * 引数が15の倍数なら"FizBuzz", 5の倍数なら"Buzz", 3の倍数なら"Fizz", それ以外ならその数字を返す.
+ * 引数が負の数なら"負", 正の数なら"正", 0なら"零"を返す.
  * @param number 整数
  * @return 変換後の文字列
  */
-fun fizzbuzz(number: Int): String {
+fun signString(number: Int): String {
     // 条件によって異なる値で変数を初期化
-    val string = if (number%15 == 0) {// 15の倍数である条件
-        "FizzBuzz"// 15の倍数である時の値
-    } else if (number%5 == 0) {// 5の倍数である条件
-        "Buzz"// 5の倍数である時の値
-    } else if (number%3 == 0) {// 3の倍数である条件
-        "Fizz"// 3の倍数である時の値
-    } else {// 上のどれでもない条件
-        // IntクラスのtoStringメソッドの呼び出し，数値を文字列に変換
-        number.toString()// 上のどれでもない時の値
+    val string = if (number < 0) {// 負の数の場合
+        "負"
+    } else if(number > 0) {// 正の数の場合
+        "正"
+    } else {// それ以外の場合
+        "零"
     }
-    // 変数を返す
     return string
 }
 
 fun main(args: Array<String>) {
-    val a = 10
-    val b = 8
-    val c = 9
-    val d = 90
-    println("$a -> ${fizzbuzz(a)}")
-    println("$b -> ${fizzbuzz(b)}")
-    println("$c -> ${fizzbuzz(c)}")
-    println("$d -> ${fizzbuzz(d)}")
+    val a = -10
+    val b = 0
+    val c = 5
+    println("$a -> ${signString(a)}")
+    println("$b -> ${signString(b)}")
+    println("$c -> ${signString(c)}")
 }
 ```
 このプログラムの実行結果は以下のようになります．
@@ -78,42 +72,35 @@ else {
 package jumpaku.programming.branches
 
 /**
- * Int型の数値を文字列に変換する.
- * ただし, 引数が3の倍数か3の付く数字なら文字列の末尾に"!"を付加する.
+ * 引数が負の数なら"負", 正の数なら"正", 0なら"零"を返す.
  * @param number 整数
  * @return 変換後の文字列
-  */
-fun nabeatsu(number: Int): String {
-    // IntクラスのtoStringメソッドを呼び出し，数値を文字列に変換
-    val numberString = number.toString()
+ */
+fun signStringWhen(number: Int): String {
     // 条件によって異なる値で変数を初期化
-    val end = when {
-        // 3の倍数なら末尾に付加する文字を"!"にする
-        number%3 == 0 -> "!"
-        // 3の倍数なら末尾に付加する文字を"!"にする
-        // Stringクラスのcontainsメソッドを呼び出し，
-        // numberStringが"3"を含むかどうかを調べる．
-        numberString.contains("3") -> "!"
-        // どの条件も満たさないなら末尾に付加する文字を空にする
-        else -> ""
+    val string = when {
+        number < 0 -> "負"// 負の数の場合
+        number > 0 -> "正"// 正の数の場合
+        else -> "零"// それ以外の場合
     }
-    return numberString + end
+    return string
 }
 
 fun main(args: Array<String>) {
-    val a = 11
-    val b = 12
-    val c = 13
-    println("$a -> ${nabeatsu(a)}")
-    println("$b -> ${nabeatsu(b)}")
-    println("$c -> ${nabeatsu(c)}")
+    val a = -10
+    val b = 0
+    val c = 5
+    println("$a -> ${signStringWhen(a)}")
+    println("$b -> ${signStringWhen(b)}")
+    println("$c -> ${signStringWhen(c)}")
 }
 ```
 このプログラムの実行結果は以下のようになります．
 ```
-11 -> 11
-12 -> 12!
-13 -> 13!
+10 -> Buzz
+8 -> 8
+9 -> Fizz
+90 -> FizzBuzz
 ```
 
 ## `when` による分岐
@@ -140,41 +127,41 @@ when {
 
 ## 練習
 
+1. 下のソースコード内の変数 `string` の型を答えてください．
 1. 下のソースコードの実行結果を予想してください．
-1. 下のソースコードに，GPに応じてメッセージを出力する `advise(gp: Int)` 関数を追加してください．ただし，出力されるメッセージは以下の通りとします．
-    * gpが `0` または `1` の場合： `"頑張りましょう．"`
-    * gpが `2` または `3` の場合： `"その調子です．"`
-    * gpが `4` の場合： `"素晴らしい．"`
-    * それ以外の場合： `"入力が間違っています．"`
-1. `math`, `programming`, `english`, `economics`, `chinese` のれぞれの点数に対して，GPを求め，メッセージを出力してください．
+1. 下のソースコードの `if` `else` を `when` 書き換えてください．
 ```kt
 package jumpaku.programming.branches
 
 /**
- * 点数に応じたGPを返します．
- * @param score 点数
- * @return GP
+ * 引数が15の倍数なら"FizzBuzz", 5の倍数なら"Buzz", 3の倍数なら"Fizz", それ以外ならその数字を返す.
+ * @param number 整数
+ * @return 変換後の文字列
  */
-fun gradePoint(score: Int): Int {
-    return when {
-        score < 60 -> 0
-        score < 70 -> 1
-        score < 80 -> 2
-        score < 90 -> 3
-        else -> 4
+fun fizzbuzz(number: Int): String {
+    val string = if (number%15 == 0) {
+        "FizzBuzz"
     }
+    else if (number%5 == 0){
+        "Buzz"
+    }
+    else if (number%3 == 0){
+        "Fizz"
+    }
+    else {
+        number.toString()
+    }
+    return string// 返り値
 }
 
 fun main(args: Array<String>) {
-    val math = 100
-    val programming = 90
-    val english = 89
-    val economics = 59
-    val chinese = 60
-    println("math: $math -> ${gradePoint(math)}")
-    println("programming: $programming -> ${gradePoint(programming)}")
-    println("english: $english -> ${gradePoint(english)}")
-    println("economics: $economics -> ${gradePoint(economics)}")
-    println("chinese: $chinese -> ${gradePoint(chinese)}")
+    val a = 10
+    val b = 8
+    val c = 9
+    val d = 90
+    println("$a -> ${fizzbuzz(a)}")
+    println("$b -> ${fizzbuzz(b)}")
+    println("$c -> ${fizzbuzz(c)}")
+    println("$d -> ${fizzbuzz(d)}")
 }
 ```

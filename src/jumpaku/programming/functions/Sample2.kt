@@ -1,24 +1,19 @@
 package jumpaku.programming.functions
 
-// kotlin.mathパッケージのsqrt関数をインポート
-import kotlin.math.sqrt
-
-// 平面上の2点間の距離を計算するdistance関数の定義
-fun distance(x0: Double, y0: Double, x1: Double, y1: Double): Double {
-    // 仮引数としてx0, y0, x1, y1を受け取る
-
-    // 平方根を計算するsqrt関数の呼び出し
-    // 計算結果を返り値として返す
-    return sqrt((x0 - x1)*(x0 - x1) + (y0 - y1)*(y0 - y1))
-}
+// 既存の関数や変数のインポート
+import kotlin.math.cos
+import kotlin.math.sin
+import kotlin.math.tan
+import kotlin.math.PI
 
 fun main(args: Array<String>) {
-    val aX = 1.0
-    val aY = 1.0
-    val bX = 4.0
-    val bY = 5.0
-    // distance関数の呼び出し
-    // 実引数としてaX, aY, bX, bYを返す
-    val distanceAB = distance(aX, aY, bX, bY)
-    println("distance between ($aX, $aY) and ($bX, $bY) = $distanceAB")
+    // インポートした変数を参照
+    val theta = PI/4.0
+    // インポートした関数の呼び出し
+    val sinTheta = sin(theta)
+    val cosTheta = cos(theta)
+    val tanTheta = tan(theta)
+    println("sinTheta = $sinTheta") // sinTheta = 0.7071067811865475
+    println("cosTheta = $cosTheta") // cosTheta = 0.7071067811865476
+    println("tanTheta = $tanTheta") // tanTheta = 0.9999999999999999
 }
