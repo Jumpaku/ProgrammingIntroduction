@@ -16,12 +16,12 @@ class Person(// コンストラクタの引数
 }
 
 fun main(args: Array<String>) {
-    // Personクラスのコンストラクの呼び出し，インスタンスの生成
-    val mpcMan = Person("MPC-Man", 24)
-    println("mpcManの型 : ${mpcMan::class}")
+    val mpcMan = Person("MPC-Man", 24)// コンストラクタの呼び出し
+
     // フィールドの参照
-    println("mpcMan.name = ${mpcMan.name}")
-    println("mpcMan.age = ${mpcMan.age}")
+    println("mpcMan.name = ${mpcMan.name}") // mpcMan.name = MPC-Man
+    println("mpcMan.age = ${mpcMan.age}") // mpcMan.age = 24
+
     // メソッドの呼び出し
-    mpcMan.introduce()
+    mpcMan.introduce() // My name is MPC-Man. I am 24 years old.
 }

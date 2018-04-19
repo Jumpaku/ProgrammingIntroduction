@@ -116,22 +116,3 @@ fun main(args: Array<String>) {
     println("distance($a, $b) = $d")
 }
 ```
-## 練習 2
-以下のソースコードに平面上の2つのベクトルのなす角(単位は度)を求める関数 `angleVectors(x0: Double, y0: Double, x1: Double, y1: Double): Double` の定義を追加してください．
-平方根を求める関数や逆三角関数などが必要な場合は [Kotlin標準ライブラリのリファレンス](https://kotlinlang.org/api/latest/jvm/stdlib/index.html) の中から探してください．
-```kt
-package jumpaku.programming.variablesandoperators
-
-import kotlin.math.PI
-import kotlin.math.acos
-import kotlin.math.sqrt
-
-fun main(args: Array<String>) {
-    val vX = 2.0
-    val vY = 0.0
-    val uX = 5.0
-    val uY = 5.0
-    val angle = angleVectors(vX, vY, uX, uY)
-    println("angle between ($vX, $vY) and ($uX, $uY) = $angle [degree]")
-}
-```

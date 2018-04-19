@@ -1,10 +1,6 @@
 package jumpaku.programming.branches
 
-/**
- * 引数が15の倍数なら"FizzBuzz", 5の倍数なら"Buzz", 3の倍数なら"Fizz", それ以外ならその数字を返す.
- * @param number 整数
- * @return 変換後の文字列
- */
+// 引数が15の倍数なら"FizzBuzz", 5の倍数なら"Buzz", 3の倍数なら"Fizz", それ以外ならその数字を返す.
 fun fizzbuzz(number: Int): String {
     val string = if (number%15 == 0) {
         "FizzBuzz"
@@ -22,12 +18,12 @@ fun fizzbuzz(number: Int): String {
 }
 
 fun main(args: Array<String>) {
-    val a = 10
-    val b = 8
-    val c = 9
-    val d = 90
-    println("$a -> ${fizzbuzz(a)}")
-    println("$b -> ${fizzbuzz(b)}")
-    println("$c -> ${fizzbuzz(c)}")
-    println("$d -> ${fizzbuzz(d)}")
+    val a = fizzbuzz(10)
+    val b = fizzbuzz(8)
+    val c = fizzbuzz(9)
+    val d = fizzbuzz(90)
+    println("10 -> $a")
+    println("8 -> $b")
+    println("9 -> $c")
+    println("90 -> $d")
 }
