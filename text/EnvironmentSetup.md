@@ -1,31 +1,26 @@
 # 環境構築
-
-本ページでは，
+ここでは，
 Kotlinでプログラミングをするための環境構築を行い，
 プロジェクトを作成し，
-簡単なサンプルプログラムを実行します．
+簡単なサンプルプログラムを実行するまでの作業について解説します．
 
 ## 環境構築
-
 自分のOSに該当する説明に従って環境構築を行います．
 <details><summary>macOSの場合</summary><div>
 
 ### Homebrew
-
 ターミナルを起動して以下を実行し，Homebrewをインストールする．
 ```sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 ### Java
-
 ターミナルで以下を実行し，Javaをインストールする．
 ```sh
 brew cask install java
 ```
 
 ### IntelliJ IDEA CE
-
 以下のリンクからIntelliJ IDEAのCommunityエディションをダウンロードします．
 [https://www.jetbrains.com/idea/](https://www.jetbrains.com/idea/)
 
@@ -42,14 +37,12 @@ IntelliJは統合開発環境の一つで，プログラミングをするため
 <details><summary>Ubuntuの場合</summary><div>
 
 ### Java
-
 端末を起動して以下を実行し，Javaをインストールします．
 ```sh
 sudo apt install default-jdk
 ```
 
 ### IntelliJ IDEA CE
-
 以下のリンクからIntelliJ IDEAのCommunityエディションをダウンロードします．
 
 [https://www.jetbrains.com/idea/](https://www.jetbrains.com/idea/)
@@ -61,18 +54,15 @@ IntelliJは統合開発環境の一つで，プログラミングをするため
 </div></details>
 
 ## プロジェクト作成
+プロジェクトとは一つの開発における設定ファイルやソースコードをまとめたものです．
 
-プロジェクトを作成します．
-プロジェクトとは統合開発環境を用いた一つの開発における設定ファイルやソースコードをまとめたものです．
-
-プロジェクトの作成手順を以下に示します．
-
+以下はプロジェクトの作成手順です．
 1. IntelliJを起動する．
 1. [File]-->[New]-->[Project...]と選択する．
 1. [Kotlin]-->[Kotlin/JVM]と選択し，[Next]ボタンを押す．
 1. プロジェクト名(ここでは `ProgramingIntroduction` )を入力し，[Finish]ボタンを押す．
 
-以下にその操作例を示します．
+説明だけでは伝わらないため，以下にその操作例の動画を示します．
 
 [![](https://img.youtube.com/vi/BV8Xa2nfn3c/0.jpg)](https://www.youtube.com/watch?v=BV8Xa2nfn3c)
 
@@ -80,23 +70,9 @@ IntelliJは統合開発環境の一つで，プログラミングをするため
 このディレクトリが本文書で使用するプロジェクトとなります．
 
 ## サンプルプログラム
-
-ソースコードを作成し，プログラムを実行します．
-
-以下のソースコードを作成します．
-
-`src/jumoaku/programingintroduction/page1/Sample1.kt`
+以下のソースコードを作成してください．
 ```kt
-// パッケージ宣言
-package jumpaku.programming.page1
-
-// main関数の定義
-fun main(args: Array<String>) {
-    // println関数の呼び出し
-    println("Getting started programming")
-}
 ```
-
 その後，このプログラムを実行(Run)します．
 すると，コンパイルと実行が行われ，以下の英文が出力されます．
 ```
@@ -110,43 +86,39 @@ Getting started programming
 ## サンプルプログラムの説明
 
 ### コメントアウト
-
 `//` を書くとその行の `//` 以降の部分はコンパイル時に無視されます．
 これをコメントアウトと呼びます．
 コメントアウトすることで，ソースコードに説明を付けることができます．
 `/*` と `*/`で囲むことで行を跨いでコメントアウトすることができます．
 
 ### パッケージ
-
-ファイルの先頭で
+パッケージとはソースコードが所属する「まとまり」のことで，
+名前の衝突を防いだり，関連するファイルをまとめるために使用されます．
+以下はパッケージを指定する構文です．
 ```kt
 package パッケージ名
 ```
-と書くことで，ソースコードが所属するパッケージを指定することができます．
-パッケージはソースコード内に定義された識別子名の衝突を防いだり，関連するファイルをグループ化するために使用されます．
+パッケージ指定はファイルの一番上でに書きます．
 
 ### main関数
-
 プログラムは `main` 関数から始まります．
 関数について詳しくは[ 関数 ](Functions.md)で説明します．
 
 ### println関数
-
 `println` 関数はターミナルに文字を出力するために使用する関数です．
 出力する内容を `(` と `)` の間に書きます．
 `"`, `"` で囲まれたものを文字列と呼びます．
 
 ## まとめ
-
-1. 本文書ではKotlinでプログラミングするために以下を準備する必要がある．
+1. 本文書ではKotlinでプログラミングするために以下を準備する必要があります．
     * JDK
     * IntelliJ
-1. プロジェクトの作成方法を以下に示す．
+1. プロジェクトの作成方法を以下に示します．
 [![](https://img.youtube.com/vi/BV8Xa2nfn3c/0.jpg)](https://www.youtube.com/watch?v=BV8Xa2nfn3c)
-1. ソースコードの作成と実行方法を以下に示す．
+1. ソースコードの作成と実行方法を以下に示します．
 [![](https://img.youtube.com/vi/-TVzzuHAdcg/0.jpg)](https://www.youtube.com/watch?v=-TVzzuHAdcg)
-1. プログラムは `main` 関数から始まる．
-1. ターミナルに実行結果を出力するには `println` 関数を利用する．
+1. プログラムは `main` 関数から始まります．
+1. ターミナルに実行結果を出力するには `println` 関数を利用します．
 
 ## 練習
 `Practice1` というプロジェクトを新たに作成し，
