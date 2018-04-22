@@ -6,5 +6,5 @@ fun main(args: Array<String>) {
     val a: Int = 1089
 
     // インスタンスを参照
-    println(a) // 1089
+    println("a = $a") // 1089
 }
