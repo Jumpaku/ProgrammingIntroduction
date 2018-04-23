@@ -1,0 +1,3 @@
+mpcMan.name = MPC-Man
+mpcMan.age = 24
+My name is MPC-Man. I am 24 years old.
