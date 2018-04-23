@@ -181,3 +181,6 @@ gradle-app.setting
 \.project
 
 \.idea/
+
+### Jekyll
+jekyll/vendor
