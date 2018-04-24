@@ -1,0 +1,4 @@
+10 -> Buzz
+8 -> 8
+9 -> Fizz
+90 -> FizzBuzz

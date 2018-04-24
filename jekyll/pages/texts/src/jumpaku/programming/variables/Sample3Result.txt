@@ -1,0 +1,4 @@
+list = [1, 0, 8, 9, 2, 8, 3]
+list[3] = 9
+person = Person(name=Saga Ken, age=25)
+person.name = Saga Ken

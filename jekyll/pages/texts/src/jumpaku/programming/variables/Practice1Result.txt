@@ -1,0 +1,1 @@
+ products = [Product(name=Personal computer, price=159800), Product(name=Keyboard, price=3980), Product(name=Mouse, price=1280)]
