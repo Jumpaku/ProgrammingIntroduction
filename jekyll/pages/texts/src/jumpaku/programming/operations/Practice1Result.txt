@@ -1,0 +1,1 @@
+name: MPC-Man, mass: 51.7, height: 1.728

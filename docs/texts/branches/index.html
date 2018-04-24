@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>分岐 | プログラミング入門</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="分岐" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://jumpaku.github.io/ProgrammingIntroduction/texts/branches/" />
+<meta property="og:url" content="http://jumpaku.github.io/ProgrammingIntroduction/texts/branches/" />
+<meta property="og:site_name" content="プログラミング入門" />
+<script type="application/ld+json">
+{"url":"http://jumpaku.github.io/ProgrammingIntroduction/texts/branches/","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"分岐","@type":"WebPage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ProgrammingIntroduction/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://jumpaku.github.io/ProgrammingIntroduction/feed.xml" title="プログラミング入門" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77155454-3', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ProgrammingIntroduction/">プログラミング入門</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ProgrammingIntroduction/auther/">著者</a><a class="page-link" href="/ProgrammingIntroduction/introduction/">はじめに</a><a class="page-link" href="/ProgrammingIntroduction/overview/">概要</a><a class="page-link" href="/ProgrammingIntroduction/summary/">おわりに</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">分岐</h1>
+  </header>
+
+  <div class="post-content">
+    <p>分岐とは条件によって異なる計算や処理をすることです．
+以下は条件によって分岐する処理を表す図です．</p>
+
+<p><img src="/ProgrammingIntroduction/images/texts/branch.png" alt="" /></p>
+
+<h2 id="if-else-による分岐">if else による分岐</h2>
+<p>以下は条件によって異なる値を出力するプログラムです．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.branches</span>
+
+<span class="c1">// 引数が負の数なら"負", 正の数なら"正", 0なら"零"を返す.</span>
+<span class="k">fun</span> <span class="n">signString</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">String</span> <span class="p">{</span>
+    <span class="c1">// 条件によって異なる値で変数を初期化</span>
+    <span class="kd">val</span> <span class="py">string</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="p">&lt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 負の数の場合</span>
+        <span class="s">"負"</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">number</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 正の数の場合</span>
+        <span class="s">"正"</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="c1">// それ以外の場合</span>
+        <span class="s">"零"</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">string</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">a</span> <span class="p">=</span> <span class="n">signString</span><span class="p">(-</span><span class="m">10</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">b</span> <span class="p">=</span> <span class="n">signString</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">c</span> <span class="p">=</span> <span class="n">signString</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"-10 -&gt; $a"</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"0 -&gt; $b"</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"5 -&gt; $c"</span><span class="p">)</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<p>以下はその実行結果です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-none" data-lang="none">-10 -&gt; 負
+0 -&gt; 零
+5 -&gt; 正</code></pre>
+</figure>
+
+<p><code class="highlighter-rouge">if</code> <code class="highlighter-rouge">else</code> 式は条件によって異なる値をとります．
+以下は <code class="highlighter-rouge">if</code> <code class="highlighter-rouge">else</code> による分岐の構文です．</p>
+<pre><code class="language-kt">if (条件) {
+    条件を満たす場合の値，処理
+}
+else {
+    条件を満たさない場合の値，処理
+}
+</code></pre>
+<p><code class="highlighter-rouge">条件</code> には <code class="highlighter-rouge">Boolean</code> 型の値を書きます．</p>
+
+<p>以下のように <code class="highlighter-rouge">else</code> の後に <code class="highlighter-rouge">if</code> <code class="highlighter-rouge">else</code> 式を繰り返すことで複数の条件で分岐することもできます．</p>
+<pre><code class="language-kt">if (条件1) {
+    条件1を満たす場合の値，処理
+}
+else if (条件2) {
+    条件2を満たす場合の値，処理
+}
+else {
+    どの条件も満たさない場合の値，処理
+}
+</code></pre>
+
+<h2 id="when-による分岐">when による分岐</h2>
+<p><code class="highlighter-rouge">if</code> <code class="highlighter-rouge">else</code> の他に <code class="highlighter-rouge">when</code> を使うこともできます．
+以下は上のプログラムを <code class="highlighter-rouge">when</code> を使って書き直したものです．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.branches</span>
+
+<span class="c1">// 引数が負の数なら"負", 正の数なら"正", 0なら"零"を返す.</span>
+<span class="k">fun</span> <span class="n">signStringWhen</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">String</span> <span class="p">{</span>
+    <span class="c1">// 条件によって異なる値で変数を初期化</span>
+    <span class="kd">val</span> <span class="py">string</span> <span class="p">=</span> <span class="k">when</span> <span class="p">{</span>
+        <span class="n">number</span> <span class="p">&lt;</span> <span class="m">0</span> <span class="p">-&gt;</span> <span class="s">"負"</span><span class="c1">// 負の数の場合</span>
+        <span class="n">number</span> <span class="p">&gt;</span> <span class="m">0</span> <span class="p">-&gt;</span> <span class="s">"正"</span><span class="c1">// 正の数の場合</span>
+        <span class="k">else</span> <span class="p">-&gt;</span> <span class="s">"零"</span><span class="c1">// それ以外の場合</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">string</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">a</span> <span class="p">=</span> <span class="n">signStringWhen</span><span class="p">(-</span><span class="m">10</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">b</span> <span class="p">=</span> <span class="n">signStringWhen</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">c</span> <span class="p">=</span> <span class="n">signStringWhen</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"-10 -&gt; $a"</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"0 -&gt; $b"</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"5 -&gt; $c"</span><span class="p">)</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<p>以下はその実行結果です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-none" data-lang="none">-10 -&gt; 負
+0 -&gt; 零
+5 -&gt; 正</code></pre>
+</figure>
+
+<p>以下は <code class="highlighter-rouge">when</code> を用いた分岐の構文です．</p>
+<pre><code class="language-kt">when {
+    条件 -&gt; 条件を満たす場合の値，処理
+    else -&gt; 条件を満たさない場合の値，処理
+}
+</code></pre>
+<p><code class="highlighter-rouge">when</code> 式の <code class="highlighter-rouge">条件</code> にも <code class="highlighter-rouge">Boolean</code> 型の値を書きます．
+また，以下のように条件を増やすこともできます．</p>
+<pre><code class="language-kt">when {
+    条件1 -&gt; 条件1を満たす場合の値，処理
+    条件2 -&gt; 条件2を満たす場合の値，処理
+    else -&gt; どの条件も満たさない場合の値，処理
+}
+</code></pre>
+
+<p><code class="highlighter-rouge">if</code> <code class="highlighter-rouge">else</code> 式と <code class="highlighter-rouge">when</code> 式は同じことができますが，ソースコードがシンプルで読みやすい方を選びます．</p>
+
+<h2 id="まとめ">まとめ</h2>
+<ol>
+  <li>分岐とは条件によって異なる計算や処理をすることである．</li>
+  <li>分岐を実装するには <code class="highlighter-rouge">if</code> <code class="highlighter-rouge">else</code> を用いる方法と <code class="highlighter-rouge">when</code> を用いる方法がある．</li>
+</ol>
+
+<h2 id="練習">練習</h2>
+
+<ol>
+  <li>下のソースコード内の変数 <code class="highlighter-rouge">string</code> の型を答えてください．</li>
+  <li>下のソースコードの実行結果を予想してください．</li>
+  <li>下のソースコードの <code class="highlighter-rouge">if</code> <code class="highlighter-rouge">else</code> を <code class="highlighter-rouge">when</code> 書き換えてください．</li>
+</ol>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.branches</span>
+
+<span class="c1">// 引数が15の倍数なら"FizzBuzz", 5の倍数なら"Buzz", 3の倍数なら"Fizz", それ以外ならその数字を返す.</span>
+<span class="k">fun</span> <span class="n">fizzbuzz</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">String</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">string</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">number</span><span class="p">%</span><span class="m">15</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="s">"FizzBuzz"</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">number</span><span class="p">%</span><span class="m">5</span> <span class="p">==</span> <span class="m">0</span><span class="p">){</span>
+        <span class="s">"Buzz"</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">number</span><span class="p">%</span><span class="m">3</span> <span class="p">==</span> <span class="m">0</span><span class="p">){</span>
+        <span class="s">"Fizz"</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">number</span><span class="p">.</span><span class="n">toString</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">string</span><span class="c1">// 返り値</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">a</span> <span class="p">=</span> <span class="n">fizzbuzz</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">b</span> <span class="p">=</span> <span class="n">fizzbuzz</span><span class="p">(</span><span class="m">8</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">c</span> <span class="p">=</span> <span class="n">fizzbuzz</span><span class="p">(</span><span class="m">9</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">d</span> <span class="p">=</span> <span class="n">fizzbuzz</span><span class="p">(</span><span class="m">90</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"10 -&gt; $a"</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"8 -&gt; $b"</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"9 -&gt; $c"</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"90 -&gt; $d"</span><span class="p">)</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ProgrammingIntroduction/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">プログラミング入門</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">プログラミング入門</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/Jumpaku"><svg class="svg-icon"><use xlink:href="/ProgrammingIntroduction/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Jumpaku</span></a></li><li><a href="https://www.twitter.com/Jumpaku"><svg class="svg-icon"><use xlink:href="/ProgrammingIntroduction/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">Jumpaku</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

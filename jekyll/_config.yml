@@ -13,22 +13,31 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Programming Introduction
-email: your-email@example.com
+title: プログラミング入門
+email: 
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "/ProgrammingIntroduction" # the subpath of your site, e.g. /blog
 url: "http://jumpaku.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+google_analytics: "UA-77155454-3" 
 twitter_username: Jumpaku
 github_username:  Jumpaku
 
 # Build settings
 markdown: kramdown
+kramdown:
+  parse_block_html: true
+
 theme: minima
 plugins:
   - jekyll-feed
+header_pages:
+  - pages/auther/index.md
+  - pages/introduction/index.md
+  - pages/overview/index.md
+  - pages/summary/index.md
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

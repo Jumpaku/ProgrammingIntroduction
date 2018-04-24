@@ -184,3 +184,7 @@ gradle-app.setting
 
 ### Jekyll
 jekyll/vendor
+
+###
+source.sh
+build.sh
