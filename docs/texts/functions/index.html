@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>関数 | プログラミング入門</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="関数" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://0.0.0.0:4000/ProgrammingIntroduction/texts/functions/" />
+<meta property="og:url" content="http://0.0.0.0:4000/ProgrammingIntroduction/texts/functions/" />
+<meta property="og:site_name" content="プログラミング入門" />
+<script type="application/ld+json">
+{"url":"http://0.0.0.0:4000/ProgrammingIntroduction/texts/functions/","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"関数","@type":"WebPage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ProgrammingIntroduction/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/ProgrammingIntroduction/feed.xml" title="プログラミング入門" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ProgrammingIntroduction/">プログラミング入門</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ProgrammingIntroduction/auther/">著者</a><a class="page-link" href="/ProgrammingIntroduction/introduction/">はじめに</a><a class="page-link" href="/ProgrammingIntroduction/overview/">概要</a><a class="page-link" href="/ProgrammingIntroduction/summary/">おわりに</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">関数</h1>
+  </header>
+
+  <div class="post-content">
+    <p>関数とは処理を一つにまとめて名前を付けて再利用できるようにしたものです．
+関数は0個以上の引数(ひきすう)を受け取り，1個の返り値を返します．
+引数とは関数内の処理で必要な入力データのことです．
+返り値とは関数内の処理の結果として生成される出力データのことです．</p>
+
+<p>関数が呼び出されると，処理が関数定義にジャンプし，関数内の処理が実行されます．
+関数内の処理が終わると呼び出し元に処理が戻ります．
+以下は関数呼び出し時の処理の流れを表す図です．</p>
+
+<p><img src="/ProgrammingIntroduction/images/texts/function.png" alt="" /></p>
+
+<p>以下は関数の定義と呼び出しを行うプログラムです．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.functions</span>
+
+<span class="c1">// average関数の定義(2つの実数の平均を計算する)</span>
+<span class="k">fun</span> <span class="n">average</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Double</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Double</span><span class="p">):</span> <span class="n">Double</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="p">+</span> <span class="n">b</span><span class="p">)/</span><span class="m">2.0</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">x</span> <span class="p">=</span> <span class="m">11.0</span>
+    <span class="kd">val</span> <span class="py">y</span> <span class="p">=</span> <span class="m">22.0</span>
+    <span class="kd">val</span> <span class="py">avg</span> <span class="p">=</span> <span class="n">average</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"average($x, $y) = $avg"</span><span class="p">)</span><span class="c1">// average(11.0, 22.0) = 16.5</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<p>以下はその実行結果です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-none" data-lang="none">average(11.0, 22.0) = 16.5</code></pre>
+</figure>
+
+<h2 id="関数の定義">関数の定義</h2>
+<p>以下は関数定義の構文です．</p>
+<pre><code class="language-kt">fun 関数名(仮引数名: 仮引数の型, ・・・): 返り値の型 {
+    処理
+    return 返り値
+}
+</code></pre>
+<p>関数名に使える文字は変数名と同じです．</p>
+
+<p>仮引数とは関数が受け取る引数のことです．
+仮引数の型は省略できません．
+引数が無い場合は以下のように書きます．</p>
+<pre><code class="language-kt">fun 関数名(): 返り値の型 {
+    処理
+    return 返り値
+}
+</code></pre>
+<p><code class="highlighter-rouge">return 返り値</code> は関数内の処理を終了し，返り値を返します．</p>
+
+<p><code class="highlighter-rouge">main</code> 関数のように返り値を返す必要がない場合は，
+返り値を省略して単に <code class="highlighter-rouge">return</code> と書くことができます．
+この場合，以下のように <code class="highlighter-rouge">return</code> を省略することもできます．</p>
+<pre><code class="language-kt">fun 関数名(引数1の名前: 引数1の型, ・・・) {
+    処理
+}
+</code></pre>
+
+<h2 id="関数の呼び出し">関数の呼び出し</h2>
+<p>以下は定義されている関数を呼び出す構文です．</p>
+<pre><code class="language-kt">関数名(実引数,・・・)
+</code></pre>
+<p>実引数とは関数を呼び出すときに渡す引数のことです．
+実引数の個数，型，順番は関数定義と一致させます．
+実引数にはリテラル，変数，別の関数の返り値などの値を書きます．</p>
+
+<h2 id="関数のインポート">関数のインポート</h2>
+<p>以下はインポートした関数をプログラムです．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.functions</span>
+
+<span class="c1">// 既存の関数や変数のインポート</span>
+<span class="k">import</span> <span class="nn">kotlin.math.cos</span>
+<span class="k">import</span> <span class="nn">kotlin.math.sin</span>
+<span class="k">import</span> <span class="nn">kotlin.math.tan</span>
+<span class="k">import</span> <span class="nn">kotlin.math.PI</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="c1">// インポートした変数を参照</span>
+    <span class="kd">val</span> <span class="py">theta</span> <span class="p">=</span> <span class="n">PI</span><span class="p">/</span><span class="m">4.0</span>
+    <span class="c1">// インポートした関数の呼び出し</span>
+    <span class="kd">val</span> <span class="py">sinTheta</span> <span class="p">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">cosTheta</span> <span class="p">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">tanTheta</span> <span class="p">=</span> <span class="n">tan</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"sinTheta = $sinTheta"</span><span class="p">)</span> <span class="c1">// sinTheta = 0.7071067811865475</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"cosTheta = $cosTheta"</span><span class="p">)</span> <span class="c1">// cosTheta = 0.7071067811865476</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"tanTheta = $tanTheta"</span><span class="p">)</span> <span class="c1">// tanTheta = 0.9999999999999999</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<p>以下はその実行結果です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-none" data-lang="none">sinTheta = 0.7071067811865475
+cosTheta = 0.7071067811865476
+tanTheta = 0.9999999999999999</code></pre>
+</figure>
+
+<p>インポートとは既存の関数等を使用することを宣言することです．
+以下はインポート命令の構文です．</p>
+<pre><code class="language-kt">import 関数が所属するパッケージ名.関数名
+</code></pre>
+<p>インポート命令を記述するときはパッケージ宣言の下に記述します．</p>
+
+<p>Kotlinの標準ライブラリ内に存在する関数の中にはインポート命令を省略できるものがあります．
+例えば，<code class="highlighter-rouge">println</code> 関数は <code class="highlighter-rouge">kotlin.io</code> パッケージに所属しますがインポート命令を省略できます．</p>
+
+<h2 id="練習-1">練習 1</h2>
+<ol>
+  <li>下のソースコード内の変数 <code class="highlighter-rouge">a</code>, <code class="highlighter-rouge">b</code>, <code class="highlighter-rouge">d</code> の型を答えてください．</li>
+  <li>下のソースコード内の関数 <code class="highlighter-rouge">distance</code> の引数の型と返り値の型を答えてください．</li>
+  <li>下のソースコードの実行結果を予想してください．</li>
+  <li>下のソースコードに，平面上の2点 <code class="highlighter-rouge">p</code>, <code class="highlighter-rouge">q</code> を <code class="highlighter-rouge">t : (1.0 - t)</code> に内分する点を計算する関数 <code class="highlighter-rouge">divide(p: Point, q: Point, t: Double): Point</code> を追加してください．さらに，点<code class="highlighter-rouge">(-2.0, 3.0)</code>, <code class="highlighter-rouge">(8.0, 13.0)</code> を <code class="highlighter-rouge">0.7 : 0.3</code> に内分する点を計算して，計算結果を出力するプログラムを作成してください．</li>
+</ol>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.functions</span>
+
+<span class="k">import</span> <span class="nn">kotlin.math.sqrt</span>
+
+<span class="c1">// 平面上の点を表すデータクラス</span>
+<span class="kd">data class</span> <span class="nc">Point</span><span class="p">(</span><span class="kd">val</span> <span class="py">x</span><span class="p">:</span> <span class="n">Double</span><span class="p">,</span> <span class="kd">val</span> <span class="py">y</span><span class="p">:</span> <span class="n">Double</span><span class="p">)</span>
+
+<span class="c1">// 平面上の2点p, q間の距離を計算する関数</span>
+<span class="k">fun</span> <span class="n">distance</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span> <span class="n">Point</span><span class="p">):</span> <span class="n">Double</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">p</span><span class="p">.</span><span class="n">x</span> <span class="p">-</span> <span class="n">q</span><span class="p">.</span><span class="n">x</span><span class="p">)*(</span><span class="n">p</span><span class="p">.</span><span class="n">x</span> <span class="p">-</span> <span class="n">q</span><span class="p">.</span><span class="n">x</span><span class="p">)</span> <span class="p">+</span> <span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">y</span> <span class="p">-</span> <span class="n">q</span><span class="p">.</span><span class="n">y</span><span class="p">)*(</span><span class="n">p</span><span class="p">.</span><span class="n">y</span> <span class="p">-</span> <span class="n">q</span><span class="p">.</span><span class="n">y</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="c1">// 平面上の2点p, qをt : (1.0 - t)に内分する点を計算する関数</span>
+<span class="k">fun</span> <span class="n">divide</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="n">Double</span><span class="p">):</span> <span class="n">Point</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Point</span><span class="p">((</span><span class="m">1</span> <span class="p">-</span> <span class="n">t</span><span class="p">)*</span><span class="n">p</span><span class="p">.</span><span class="n">x</span> <span class="p">+</span> <span class="n">t</span><span class="p">*</span><span class="n">q</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="m">1</span> <span class="p">-</span> <span class="n">t</span><span class="p">)*</span><span class="n">p</span><span class="p">.</span><span class="n">y</span> <span class="p">+</span> <span class="n">t</span><span class="p">*</span><span class="n">q</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">a</span> <span class="p">=</span> <span class="n">Point</span><span class="p">(</span><span class="m">1.0</span><span class="p">,</span> <span class="m">1.0</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">b</span> <span class="p">=</span> <span class="n">Point</span><span class="p">(</span><span class="m">4.0</span><span class="p">,</span> <span class="m">5.0</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">d</span> <span class="p">=</span> <span class="n">distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"distance($a, $b) = $d"</span><span class="p">)</span>
+
+    <span class="kd">val</span> <span class="py">p</span> <span class="p">=</span> <span class="n">Point</span><span class="p">(-</span><span class="m">2.0</span><span class="p">,</span> <span class="m">3.0</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">q</span> <span class="p">=</span> <span class="n">Point</span><span class="p">(</span><span class="m">8.0</span><span class="p">,</span> <span class="m">13.0</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">t</span> <span class="p">=</span> <span class="m">0.7</span>
+    <span class="kd">val</span> <span class="py">r</span> <span class="p">=</span> <span class="n">divide</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"divide($p, $q $t) = $r"</span><span class="p">)</span>
+
+<span class="p">}</span></code></pre>
+</figure>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ProgrammingIntroduction/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">プログラミング入門</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">プログラミング入門</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/Jumpaku"><svg class="svg-icon"><use xlink:href="/ProgrammingIntroduction/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Jumpaku</span></a></li><li><a href="https://www.twitter.com/Jumpaku"><svg class="svg-icon"><use xlink:href="/ProgrammingIntroduction/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">Jumpaku</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

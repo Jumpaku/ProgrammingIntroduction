@@ -1,0 +1,4 @@
+integer = 123
+real = 123.0
+string = abc
+truth = true

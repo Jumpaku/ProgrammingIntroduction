@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>繰り返し | プログラミング入門</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="繰り返し" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://0.0.0.0:4000/ProgrammingIntroduction/texts/loops/" />
+<meta property="og:url" content="http://0.0.0.0:4000/ProgrammingIntroduction/texts/loops/" />
+<meta property="og:site_name" content="プログラミング入門" />
+<script type="application/ld+json">
+{"url":"http://0.0.0.0:4000/ProgrammingIntroduction/texts/loops/","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"繰り返し","@type":"WebPage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ProgrammingIntroduction/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/ProgrammingIntroduction/feed.xml" title="プログラミング入門" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ProgrammingIntroduction/">プログラミング入門</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ProgrammingIntroduction/auther/">著者</a><a class="page-link" href="/ProgrammingIntroduction/introduction/">はじめに</a><a class="page-link" href="/ProgrammingIntroduction/overview/">概要</a><a class="page-link" href="/ProgrammingIntroduction/summary/">おわりに</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">繰り返し</h1>
+  </header>
+
+  <div class="post-content">
+    <p>繰り返しとは同じような処理を何度か行うことです．</p>
+
+<h2 id="for-による繰り返し">for による繰り返し</h2>
+<p>以下は <code class="highlighter-rouge">for</code> によって処理を繰り返すプログラムです．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.loops</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">0</span><span class="o">..</span><span class="m">4</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">"ループカウンタ = $i"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<p>以下はその実行結果です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-none" data-lang="none">ループカウンタ = 0
+ループカウンタ = 1
+ループカウンタ = 2
+ループカウンタ = 3
+ループカウンタ = 4</code></pre>
+</figure>
+
+<p><code class="highlighter-rouge">for</code> は指定された範囲内の要素一つ一つに対して同じような処理を繰り返します．
+<code class="highlighter-rouge">for</code> は以下のように使用します．</p>
+<pre><code class="language-kt">for (変数 in 範囲) {
+    処理
+}
+</code></pre>
+<p>変数は範囲に含まれる値を一つ一つ参照します．</p>
+
+<h2 id="レンジ">レンジ</h2>
+<p>ここで，<code class="highlighter-rouge">開始の値..終了の値</code> はレンジというもので，
+<code class="highlighter-rouge">開始の値</code> から <code class="highlighter-rouge">終了の値</code> までの範囲に含まれる要素の列を表します．
+レンジやリストのようなデータが並んだ列データをコレクションと呼びます．
+コレクションについては，<a href="/ProgrammingIntroduction/texts/collections/">コレクション</a>で説明します．</p>
+
+<h2 id="do-while-による繰り返し">do while による繰り返し</h2>
+<p>以下は <code class="highlighter-rouge">do</code> <code class="highlighter-rouge">while</code> によって処理を繰り返す処理です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.loops</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="k">do</span> <span class="p">{</span><span class="c1">// コンソールへの標準入力を繰り返す</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">"input in console"</span><span class="p">)</span>
+        <span class="c1">// 標準入力の文字列を返すreadLine関数の呼び出し</span>
+        <span class="kd">val</span> <span class="py">input</span> <span class="p">=</span> <span class="n">readLine</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">input</span> <span class="p">!=</span> <span class="s">"OK"</span><span class="p">)</span><span class="c1">// 繰り返しを続ける条件，"OK"が入力されるまで繰り返す</span>
+
+    <span class="n">println</span><span class="p">(</span><span class="s">"done"</span><span class="p">)</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<p>以下はそのプログラムへの入力です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="n">xxx</span>
+<span class="n">abc</span>
+<span class="n">OK</span></code></pre>
+</figure>
+
+<p>以下はその入力に対する実行結果です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-none" data-lang="none">input in console
+input in console
+input in console
+done</code></pre>
+</figure>
+
+<p><code class="highlighter-rouge">do</code> <code class="highlighter-rouge">while</code> は条件が満たされている間，同じ処理を繰り返します．
+以下は <code class="highlighter-rouge">do</code> <code class="highlighter-rouge">while</code> を用いた繰り返しの構文です．</p>
+<pre><code class="language-kt">do {
+    処理
+} while(継続条件)
+</code></pre>
+<p>条件には <code class="highlighter-rouge">Boolean</code> 型の値を書きます．</p>
+
+<h2 id="readline-関数"><code class="highlighter-rouge">readLine</code> 関数</h2>
+<p><code class="highlighter-rouge">readLine</code> 関数は標準入力の文字列を取得する関数です．
+<code class="highlighter-rouge">readLine</code> 関数はコンソールに文字列が入力され，エンターキーが押されるまで待機します．
+エンターキーが押されると，<code class="highlighter-rouge">readLine</code> 関数は入力した文字列を返します．</p>
+
+<h2 id="まとめ">まとめ</h2>
+<ol>
+  <li>繰り返しとは同じような処理を何度か行うことである．</li>
+  <li>繰り返しを実装するには <code class="highlighter-rouge">for</code> を用いる方法や <code class="highlighter-rouge">do</code> <code class="highlighter-rouge">while</code> を用いる方法等がある．</li>
+</ol>
+
+<h2 id="練習">練習</h2>
+<p><code class="highlighter-rouge">1</code> から <code class="highlighter-rouge">20</code> までの整数に対して，
+それが <code class="highlighter-rouge">15</code> の倍数なら <code class="highlighter-rouge">"FizzBuzz"</code>, <code class="highlighter-rouge">5</code> の倍数なら <code class="highlighter-rouge">"Buzz"</code>, <code class="highlighter-rouge">3</code> の倍数なら <code class="highlighter-rouge">"Fizz"</code>, それ以外ならその数字を表示するプログラムを作成してください．</p>
+
+<h2 id="補足">補足</h2>
+<p>繰り返しの構文には <code class="highlighter-rouge">for</code>, <code class="highlighter-rouge">do</code> <code class="highlighter-rouge">while</code> の他に以下の <code class="highlighter-rouge">while</code> 構文があります．</p>
+
+<pre><code class="language-kt">while(継続条件) {
+    処理
+}
+</code></pre>
+
+<p>繰り返しは上で紹介した構文の他に，<a href="/ProgrammingIntroduction/texts/collections/">コレクション</a>の機能を利用して実装することができます．</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ProgrammingIntroduction/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">プログラミング入門</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">プログラミング入門</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/Jumpaku"><svg class="svg-icon"><use xlink:href="/ProgrammingIntroduction/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Jumpaku</span></a></li><li><a href="https://www.twitter.com/Jumpaku"><svg class="svg-icon"><use xlink:href="/ProgrammingIntroduction/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">Jumpaku</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

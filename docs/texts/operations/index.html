@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>演算 | プログラミング入門</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="演算" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://0.0.0.0:4000/ProgrammingIntroduction/texts/operations/" />
+<meta property="og:url" content="http://0.0.0.0:4000/ProgrammingIntroduction/texts/operations/" />
+<meta property="og:site_name" content="プログラミング入門" />
+<script type="application/ld+json">
+{"url":"http://0.0.0.0:4000/ProgrammingIntroduction/texts/operations/","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"演算","@type":"WebPage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ProgrammingIntroduction/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/ProgrammingIntroduction/feed.xml" title="プログラミング入門" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ProgrammingIntroduction/">プログラミング入門</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ProgrammingIntroduction/auther/">著者</a><a class="page-link" href="/ProgrammingIntroduction/introduction/">はじめに</a><a class="page-link" href="/ProgrammingIntroduction/overview/">概要</a><a class="page-link" href="/ProgrammingIntroduction/summary/">おわりに</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">演算</h1>
+  </header>
+
+  <div class="post-content">
+    <p>演算とは演算子という記号を用いた基本的な計算のことです．</p>
+
+<h2 id="四則演算">四則演算</h2>
+<p>以下は数値の四則演算を行うプログラムです．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.operations</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">x</span> <span class="p">=</span> <span class="m">87</span>
+    <span class="kd">val</span> <span class="py">y</span> <span class="p">=</span> <span class="m">7</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"x + y = ${x + y}"</span><span class="p">)</span> <span class="c1">// 和</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"x - y = ${x - y}"</span><span class="p">)</span> <span class="c1">// 差</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"x * y = ${x * y}"</span><span class="p">)</span> <span class="c1">// 積</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"x / y = ${x / y}"</span><span class="p">)</span> <span class="c1">// 商</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"x % y = ${x % y}"</span><span class="p">)</span> <span class="c1">// 剰余</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<p>以下はその実行結果です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-none" data-lang="none">x + y = 94
+x - y = 80
+x * y = 609
+x / y = 12
+x % y = 3</code></pre>
+</figure>
+
+<p>数値( <code class="highlighter-rouge">Int</code>, <code class="highlighter-rouge">Long</code>, <code class="highlighter-rouge">Float</code>, <code class="highlighter-rouge">Double</code> など)に関する演算子を以下に示します．</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">演算子</th>
+      <th style="text-align: center">意味</th>
+      <th style="text-align: center">使用例 (Int)</th>
+      <th>使用例 (Double)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">+</code></td>
+      <td style="text-align: center">和</td>
+      <td style="text-align: center"><code class="highlighter-rouge">1 + 2 // 3</code></td>
+      <td><code class="highlighter-rouge">1.0 + 2.5 // 3.5</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">-</code></td>
+      <td style="text-align: center">差</td>
+      <td style="text-align: center"><code class="highlighter-rouge">1 - 2 // -1</code></td>
+      <td><code class="highlighter-rouge">3.5 - 2.5 // 1.0</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">*</code></td>
+      <td style="text-align: center">積</td>
+      <td style="text-align: center"><code class="highlighter-rouge">-2 * 6 // -12</code></td>
+      <td><code class="highlighter-rouge">-2.5 * 2.0 // -5.0 </code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">/</code></td>
+      <td style="text-align: center">商</td>
+      <td style="text-align: center"><code class="highlighter-rouge">7 / 2 // 3</code></td>
+      <td><code class="highlighter-rouge">7.0 / 2.0 // 3.5</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">%</code></td>
+      <td style="text-align: center">剰余</td>
+      <td style="text-align: center"><code class="highlighter-rouge">7 % 2 // 1</code></td>
+      <td><code class="highlighter-rouge">13.0 % 2.5 // 0.5</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="リスト文字列の演算">リスト，文字列の演算</h2>
+<p>以下は文字列の演算を行うプログラムです．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.operations</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">s0</span> <span class="p">=</span> <span class="s">"abc"</span>
+    <span class="kd">val</span> <span class="py">s1</span> <span class="p">=</span> <span class="s">"xyz"</span>
+    <span class="kd">val</span> <span class="py">concatenated</span> <span class="p">=</span> <span class="n">s0</span> <span class="p">+</span> <span class="n">s1</span>
+    <span class="kd">val</span> <span class="py">containsCx</span> <span class="p">=</span> <span class="s">"cx"</span> <span class="k">in</span> <span class="n">concatenated</span>
+
+    <span class="n">println</span><span class="p">(</span><span class="s">"concatenated = $concatenated"</span><span class="p">)</span> <span class="c1">// "abcxyz"</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"containsCx = $containsCx"</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<p>以下はその実行結果です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-none" data-lang="none">concatenated = abcxyz
+containsCx = true</code></pre>
+</figure>
+
+<p>文字列やリストといった列に関する演算子を以下に示します．</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">演算子</th>
+      <th style="text-align: center">意味</th>
+      <th style="text-align: center">使用例 (String)</th>
+      <th>使用例 (List<Int>)</Int></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">+</code></td>
+      <td style="text-align: center">結合</td>
+      <td style="text-align: center"><code class="highlighter-rouge">"abc" + "def" // "abcdef"</code></td>
+      <td><code class="highlighter-rouge">listOf(1, 0) + listOf(8, 9) // [1, 0, 8, 9]</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">in</code></td>
+      <td style="text-align: center">含むかどうか</td>
+      <td style="text-align: center"><code class="highlighter-rouge">"xyz" in xzxyzz // true</code></td>
+      <td><code class="highlighter-rouge">5 in listOf(2, 8, 3) // false</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="highlighter-rouge">in</code> の演算結果は <code class="highlighter-rouge">Boolean</code> となります．</p>
+
+<h2 id="比較演算">比較演算</h2>
+<p>以下は文字列や数値の比較演算を行うプログラムです．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.operations</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"${10 == 8}"</span><span class="p">)</span> <span class="c1">// false</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"${"</span><span class="n">abc</span><span class="s">" != "</span><span class="n">xyz</span><span class="s">"}"</span><span class="p">)</span> <span class="c1">// true</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"${28.9 &lt; 30.0}"</span><span class="p">)</span> <span class="c1">// true</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"${"</span><span class="n">abc</span><span class="s">" &lt;= "</span><span class="n">xyz</span><span class="s">"}"</span><span class="p">)</span> <span class="c1">// true</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"${28.9 &gt; 30.0}"</span><span class="p">)</span> <span class="c1">// false</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"${"</span><span class="n">abc</span><span class="s">" &gt;= "</span><span class="n">xyz</span><span class="s">"}"</span><span class="p">)</span> <span class="c1">// false</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<p>以下はその実行結果です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-none" data-lang="none">false
+true
+true
+true
+false
+false</code></pre>
+</figure>
+
+<p>比較に関する演算子を以下に示します．</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">演算子</th>
+      <th style="text-align: center">意味</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">==</code></td>
+      <td style="text-align: center">イコール</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">!=</code></td>
+      <td style="text-align: center">ノットイコール</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">&lt;</code></td>
+      <td style="text-align: center">小なり</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">&lt;=</code></td>
+      <td style="text-align: center">小なりイコール</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">&gt;</code></td>
+      <td style="text-align: center">大なり</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">&gt;=</code></td>
+      <td style="text-align: center">大なりイコール</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>これらの演算結果は <code class="highlighter-rouge">Boolean</code> となります．
+文字列の大小は辞書順に比較されます．</p>
+
+<h2 id="論理演算">論理演算</h2>
+<p>以下は真理値の演算を行うプログラムです．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.operations</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">t</span> <span class="p">=</span> <span class="k">true</span>
+    <span class="kd">val</span> <span class="py">f</span> <span class="p">=</span> <span class="k">false</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"t &amp;&amp; f = ${t &amp;&amp; f}"</span><span class="p">)</span> <span class="c1">// かつ</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"t || f = ${t || f}"</span><span class="p">)</span> <span class="c1">// または</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"!t = ${!t}"</span><span class="p">)</span> <span class="c1">// 否定</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"!f = ${!f}"</span><span class="p">)</span> <span class="c1">// 否定</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<p>以下はその実行結果です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-none" data-lang="none">t &amp;&amp; f = false
+t || f = true
+!t = false
+!f = true</code></pre>
+</figure>
+
+<p>真理値( <code class="highlighter-rouge">Boolean</code> )に関する基本的な演算子を以下に示します．</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">演算子</th>
+      <th style="text-align: center">意味</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">&amp;&amp;</code></td>
+      <td style="text-align: center">かつ</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">||</code></td>
+      <td style="text-align: center">または</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">!</code></td>
+      <td style="text-align: center">否定</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>これらの演算結果は <code class="highlighter-rouge">Boolean</code> となります．</p>
+
+<h3 id="演算の優先順位">演算の優先順位</h3>
+<p>複数の演算子を同時に利用する場合，優先順位の高い演算子から計算されます．
+以下は演算子の優先順位です．</p>
+
+<ol>
+  <li><code class="highlighter-rouge">!</code></li>
+  <li><code class="highlighter-rouge">*</code>, <code class="highlighter-rouge">/</code>, <code class="highlighter-rouge">%</code></li>
+  <li><code class="highlighter-rouge">+</code>, <code class="highlighter-rouge">-</code></li>
+  <li><code class="highlighter-rouge">&lt;</code>, <code class="highlighter-rouge">&gt;</code>, <code class="highlighter-rouge">&lt;=</code>, <code class="highlighter-rouge">&gt;=</code></li>
+  <li><code class="highlighter-rouge">==</code>, <code class="highlighter-rouge">!=</code></li>
+  <li><code class="highlighter-rouge">&amp;&amp;</code></li>
+  <li><code class="highlighter-rouge">||</code></li>
+</ol>
+
+<p>また， <code class="highlighter-rouge">(</code>, <code class="highlighter-rouge">)</code> で囲まれた部分は優先されるため，
+以下のように演算の優先順位を指定することができます．</p>
+<pre><code class="language-kt">(2 + 7) * (3 - 5) // -18
+</code></pre>
+
+<h2 id="まとめ">まとめ</h2>
+
+<ol>
+  <li>演算とは演算子を用いた基本的な計算のことである．</li>
+  <li>演算には数値の四則演算の他に文字列の結合，大小比較，論理演算などがある．</li>
+  <li>演算子には優先順位があるが，<code class="highlighter-rouge">(</code>, <code class="highlighter-rouge">)</code> が優先される．</li>
+</ol>
+
+<h2 id="練習">練習</h2>
+
+<ol>
+  <li>下のソースコード内の変数 <code class="highlighter-rouge">name</code>, <code class="highlighter-rouge">mass</code>, <code class="highlighter-rouge">height</code> の型を答えてください．</li>
+  <li>下のソースコードの実行結果を予想してください．</li>
+  <li>下のソースコードを編集して，BMIを計算して計算結果を出力するプログラムを作成してください．</li>
+  <li>下のソースコードを編集して，BMIを計算して計算結果が標準的かどうか(BMIが <code class="highlighter-rouge">18.5</code> 以上かつ <code class="highlighter-rouge">25.0</code> 未満であるかどうか( <code class="highlighter-rouge">true</code> か <code class="highlighter-rouge">false</code> ))を出力するプログラムを作成してください．</li>
+</ol>
+
+<pre><code class="language-kt">package jumpaku.programming.operators
+
+fun main(args: Array&lt;String&gt;) {
+    val name = "MPC-Man"
+    val mass = 51.7 //kg
+    val height = 1.728 //m
+    println("name: $name, mass: $mass, height: $height")
+}
+</code></pre>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ProgrammingIntroduction/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">プログラミング入門</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">プログラミング入門</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/Jumpaku"><svg class="svg-icon"><use xlink:href="/ProgrammingIntroduction/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Jumpaku</span></a></li><li><a href="https://www.twitter.com/Jumpaku"><svg class="svg-icon"><use xlink:href="/ProgrammingIntroduction/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">Jumpaku</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

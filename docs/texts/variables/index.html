@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>変数 | プログラミング入門</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="変数" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://0.0.0.0:4000/ProgrammingIntroduction/texts/variables/" />
+<meta property="og:url" content="http://0.0.0.0:4000/ProgrammingIntroduction/texts/variables/" />
+<meta property="og:site_name" content="プログラミング入門" />
+<script type="application/ld+json">
+{"url":"http://0.0.0.0:4000/ProgrammingIntroduction/texts/variables/","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"変数","@type":"WebPage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ProgrammingIntroduction/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/ProgrammingIntroduction/feed.xml" title="プログラミング入門" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ProgrammingIntroduction/">プログラミング入門</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ProgrammingIntroduction/auther/">著者</a><a class="page-link" href="/ProgrammingIntroduction/introduction/">はじめに</a><a class="page-link" href="/ProgrammingIntroduction/overview/">概要</a><a class="page-link" href="/ProgrammingIntroduction/summary/">おわりに</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">変数</h1>
+  </header>
+
+  <div class="post-content">
+    <p>変数とはメモリ上の領域に格納されたデータに名前を付けて参照できるようにするものです．
+メモリはコンピュータの構成要素の一つで，データを記憶するための装置です．</p>
+
+<h2 id="変数定義">変数定義</h2>
+<p>以下は変数を定義し，変数が参照する値を表示するプログラムです．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.variables</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+
+    <span class="c1">// 変数の定義</span>
+    <span class="kd">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">1089</span>
+
+    <span class="c1">// インスタンスを参照</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"a = $a"</span><span class="p">)</span> <span class="c1">// 1089</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<p>以下はその実行結果です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-none" data-lang="none">a = 1089</code></pre>
+</figure>
+
+<p>変数定義とはインスタンスを生成し，変数名とインスタンスを関連づけることです．
+インスタンスとはメモリ上の領域に格納されたデータです．
+インスタンスの生成では，メモリ上にインスタンスのための領域を確保し，その領域に初期値を格納します．
+以下は変数定義とインスタンスの生成，参照を表す図です．</p>
+
+<p><img src="/ProgrammingIntroduction/images/texts/variable.png" alt="" /></p>
+
+<p>以下は変数定義の構文です．</p>
+<pre><code class="language-kt">val 変数名: 型名 = 初期値
+</code></pre>
+<p>変数名にはローマ字(<code class="highlighter-rouge">a</code> - <code class="highlighter-rouge">z</code>, <code class="highlighter-rouge">A</code> - <code class="highlighter-rouge">Z</code> )と数字( <code class="highlighter-rouge">0</code> - <code class="highlighter-rouge">9</code> )とアンダースコア( <code class="highlighter-rouge">_</code> )を組み合わせを指定します．
+ただし，数字から始まるものや予約語( <code class="highlighter-rouge">package</code> や <code class="highlighter-rouge">val</code> などプログラミング言語が既に使用している組み合わせ)と一致するものは使用できません．</p>
+
+<p>型名には型の名前を指定します．
+型とはデータの形式を表すもので，インスタンスのメモリ上におけるサイズや配置を指定するものです．</p>
+
+<h2 id="基本的な型">基本的な型</h2>
+<p>以下に基本的な型と初期値の例を示します．</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">型名</th>
+      <th style="text-align: center">データの形式</th>
+      <th style="text-align: center">初期値の例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">Int</code></td>
+      <td style="text-align: center">整数(32bit)</td>
+      <td style="text-align: center"><code class="highlighter-rouge">-1</code>, <code class="highlighter-rouge">23</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">Long</code></td>
+      <td style="text-align: center">整数(64bit)</td>
+      <td style="text-align: center"><code class="highlighter-rouge">-1L</code>, <code class="highlighter-rouge">31L</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">Float</code></td>
+      <td style="text-align: center">実数(単精度浮動小数点数(32bit))</td>
+      <td style="text-align: center"><code class="highlighter-rouge">-1.0f</code>, <code class="highlighter-rouge">3.14f</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">Double</code></td>
+      <td style="text-align: center">実数(倍精度浮動小数点数(64bit))</td>
+      <td style="text-align: center"><code class="highlighter-rouge">-1.0</code>, <code class="highlighter-rouge">3.14</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">Char</code></td>
+      <td style="text-align: center">文字</td>
+      <td style="text-align: center"><code class="highlighter-rouge">'A'</code>, <code class="highlighter-rouge">'あ'</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">String</code></td>
+      <td style="text-align: center">文字列</td>
+      <td style="text-align: center"><code class="highlighter-rouge">"abc"</code>, <code class="highlighter-rouge">"いろは"</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">Boolean</code></td>
+      <td style="text-align: center">真理値</td>
+      <td style="text-align: center"><code class="highlighter-rouge">true</code>, <code class="highlighter-rouge">false</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>初期値から型を推論できる場合は変数定義の <code class="highlighter-rouge">: 型名</code> を省略できます．</p>
+
+<p>以下は基本的な型を持つ変数を使用するプログラムです．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.variables</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+
+    <span class="c1">// 変数定義</span>
+    <span class="kd">val</span> <span class="py">integer</span> <span class="p">=</span> <span class="m">123</span> <span class="c1">// Int（整数）</span>
+    <span class="kd">val</span> <span class="py">real</span> <span class="p">=</span> <span class="m">123.0</span> <span class="c1">// Double（実数）</span>
+    <span class="kd">val</span> <span class="py">string</span> <span class="p">=</span> <span class="s">"abc"</span> <span class="c1">// String（文字列）</span>
+    <span class="kd">val</span> <span class="py">truth</span> <span class="p">=</span> <span class="k">true</span> <span class="c1">// Boolean（真理値）</span>
+
+    <span class="c1">// 変数の使用</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"integer = $integer"</span><span class="p">)</span> <span class="c1">// integer = 123</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"real = $real"</span><span class="p">)</span> <span class="c1">// real = 123.0</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"string = $string"</span><span class="p">)</span> <span class="c1">// string = abc</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"truth = $truth"</span><span class="p">)</span> <span class="c1">// truth = true</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<p>以下はその実行結果です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-none" data-lang="none">integer = 123
+real = 123.0
+string = abc
+truth = true</code></pre>
+</figure>
+
+<p>文字列の中で，<code class="highlighter-rouge">$</code> や <code class="highlighter-rouge">${}</code> を用いることで文字列の中に変数の値などを埋め込むことができます．</p>
+
+<h2 id="高度な型">高度な型</h2>
+<p>基本的な型のデータを並べたり，組み合わせたりして，より高度な型を利用することができます．
+以下はリスト，データクラスを使用するプログラムです．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.variables</span>
+
+<span class="c1">// 個人を表すPersonデータクラスの定義</span>
+<span class="kd">data class</span> <span class="nc">Person</span><span class="p">(</span>
+        <span class="kd">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="c1">// nameフィールド</span>
+        <span class="kd">val</span> <span class="py">age</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="c1">//ageフィールド</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">list</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">9</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="c1">// List&lt;Int&gt;（列）</span>
+    <span class="kd">val</span> <span class="py">person</span> <span class="p">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">"Saga Ken"</span><span class="p">,</span> <span class="m">25</span><span class="p">)</span> <span class="c1">// Person（個人）</span>
+
+    <span class="c1">// リストインスタンスを参照</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"list = $list"</span><span class="p">)</span> <span class="c1">// list = 123.0</span>
+    <span class="c1">// リストインスタンスのの3番目の要素を参照</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"list[3] = ${list[3]}"</span><span class="p">)</span> <span class="c1">// list[3] = 9</span>
+    <span class="c1">// Personクラスインスタンスを参照</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"person = $person"</span><span class="p">)</span> <span class="c1">// person = Person(name=Saga Ken, age=25)</span>
+    <span class="c1">// Personクラスインスタンスのnameフィールドを参照</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"person.name = ${person.name}"</span><span class="p">)</span> <span class="c1">// person.name = Saga</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<p>以下はその実行結果です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-none" data-lang="none">list = [1, 0, 8, 9, 2, 8, 3]
+list[3] = 9
+person = Person(name=Saga Ken, age=25)
+person.name = Saga Ken</code></pre>
+</figure>
+
+<h3 id="リスト">リスト</h3>
+<p>リストとは同じ型のデータを1列に並べたデータを表すもので，<code class="highlighter-rouge">List&lt;要素の型&gt;</code> という型を持ちます．
+以下はリストを表す図です．</p>
+
+<p><img src="/ProgrammingIntroduction/images/texts/list.png" alt="" /></p>
+
+<p>以下はリストのインスタンスを生成する構文です．</p>
+<pre><code class="language-kt">listOf(要素,・・・)
+</code></pre>
+<p><code class="highlighter-rouge">Int</code> 型の添え字 <code class="highlighter-rouge">i</code> を用いてリストの <code class="highlighter-rouge">i</code> 番目の要素を参照することができます．
+以下はリストの <code class="highlighter-rouge">i</code> 番目の要素を参照する構文です．</p>
+<pre><code class="language-kt">リスト型の変数[i]
+</code></pre>
+<p>添え字は <code class="highlighter-rouge">0</code> から始まります．</p>
+
+<h3 id="データクラス">データクラス</h3>
+<p>データクラスとは様々なデータを組み合わせたデータを表す型です．
+データクラスが内部に持つデータをフィールドと呼びます．
+データクラスを利用するには，まず，データクラスを定義します．
+データクラスの定義とは，そのデータクラスがどんなデータの組み合わせたものなのかを定めるものです．
+以下はデータクラスを表す図です．</p>
+
+<p><img src="/ProgrammingIntroduction/images/texts/dataclass.png" alt="" /></p>
+
+<p>以下はデータクラス定義の構文です．</p>
+<pre><code class="language-kt">data class クラス名(val フィールド名: フィールドの型,・・・)
+</code></pre>
+<p>また，以下はデータクラスのインスタンスを生成する構文です．</p>
+<pre><code class="language-kt">クラス名(フィールドの初期値,・・・)
+</code></pre>
+<p><code class="highlighter-rouge">フィールド名</code> を用いてそのフィールドを参照することができます．
+以下はフィールドを参照する構文です．</p>
+<pre><code class="language-kt">変数.フィールド名
+</code></pre>
+
+<h2 id="まとめ">まとめ</h2>
+
+<ol>
+  <li>インスタンスはメモリ上の領域に格納されたデータである．</li>
+  <li>変数は型を持ち，メモリ上のインスタンスを参照する．</li>
+  <li>型は整数，実数(浮動小数点数)，文字列，リスト，データクラスといったデータの形式を表す．</li>
+</ol>
+
+<h2 id="練習">練習</h2>
+
+<ol>
+  <li>下のソースコードの変数 <code class="highlighter-rouge">pcName</code>, <code class="highlighter-rouge">pcPrice</code>, <code class="highlighter-rouge">pc</code> の型と値を答えてください．</li>
+  <li>下のソースコードの変数 <code class="highlighter-rouge">keyboard</code>, <code class="highlighter-rouge">mouse</code>, <code class="highlighter-rouge">products</code> の型と値を答えてください．</li>
+  <li>下のソースコードの実行結果を予想してください．</li>
+  <li>下のソースコードの中で <code class="highlighter-rouge">val x = mouse.price</code> と変数定義した場合の <code class="highlighter-rouge">x</code> 型と値を答えてください．</li>
+  <li>下のソースコードの中で <code class="highlighter-rouge">val y = products[1]</code> と変数定義した場合の <code class="highlighter-rouge">y</code> 型と値を答えてください．</li>
+  <li>下のソースコードの中で <code class="highlighter-rouge">val z = products[2].name</code> と変数定義した場合の <code class="highlighter-rouge">z</code> 型と値を答えてください．</li>
+</ol>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.variables</span>
+
+<span class="kd">data class</span> <span class="nc">Product</span><span class="p">(</span><span class="kd">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="kd">val</span> <span class="py">price</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">pcName</span> <span class="p">=</span> <span class="s">"Personal computer"</span>
+    <span class="kd">val</span> <span class="py">pcPrice</span> <span class="p">=</span> <span class="m">159800</span>
+    <span class="kd">val</span> <span class="py">pc</span> <span class="p">=</span> <span class="n">Product</span><span class="p">(</span><span class="n">pcName</span><span class="p">,</span> <span class="n">pcPrice</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">keyboard</span> <span class="p">=</span> <span class="n">Product</span><span class="p">(</span><span class="s">"Keyboard"</span><span class="p">,</span> <span class="m">3980</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">mouse</span> <span class="p">=</span> <span class="n">Product</span><span class="p">(</span><span class="s">"Mouse"</span><span class="p">,</span> <span class="m">1280</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">products</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span> <span class="n">keyboard</span><span class="p">,</span> <span class="n">mouse</span><span class="p">)</span>
+
+    <span class="n">println</span><span class="p">(</span><span class="s">" products = $products"</span><span class="p">)</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<h2 id="補足">補足</h2>
+
+<p>ここで変数としては紹介したものは正確にはプロパティというものです．</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ProgrammingIntroduction/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">プログラミング入門</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">プログラミング入門</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/Jumpaku"><svg class="svg-icon"><use xlink:href="/ProgrammingIntroduction/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Jumpaku</span></a></li><li><a href="https://www.twitter.com/Jumpaku"><svg class="svg-icon"><use xlink:href="/ProgrammingIntroduction/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">Jumpaku</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

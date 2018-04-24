@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>クラス | プログラミング入門</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="クラス" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://0.0.0.0:4000/ProgrammingIntroduction/texts/classes/" />
+<meta property="og:url" content="http://0.0.0.0:4000/ProgrammingIntroduction/texts/classes/" />
+<meta property="og:site_name" content="プログラミング入門" />
+<script type="application/ld+json">
+{"url":"http://0.0.0.0:4000/ProgrammingIntroduction/texts/classes/","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"クラス","@type":"WebPage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ProgrammingIntroduction/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/ProgrammingIntroduction/feed.xml" title="プログラミング入門" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ProgrammingIntroduction/">プログラミング入門</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ProgrammingIntroduction/auther/">著者</a><a class="page-link" href="/ProgrammingIntroduction/introduction/">はじめに</a><a class="page-link" href="/ProgrammingIntroduction/overview/">概要</a><a class="page-link" href="/ProgrammingIntroduction/summary/">おわりに</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">クラス</h1>
+  </header>
+
+  <div class="post-content">
+    <p>ここではクラスについて解説します．
+いままで利用していたデータクラスは，ここで説明するクラスの一部です．</p>
+
+<p>クラスは複数のフィールドとメソッドをまとめた型です．
+フィールドはクラスが持つデータを表し，メンバ変数と呼ばれることもあります．
+メソッドはクラスが持つ処理を表し，メンバ関数と呼ばれることもあります．
+クラスはコンストラクタという特別なインスタンス生成関数を持ちます．</p>
+
+<p>以下は <code class="highlighter-rouge">Person</code> クラスを利用するプログラムです．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.classes</span>
+
+<span class="c1">// Personクラスの定義</span>
+<span class="kd">class</span> <span class="nc">Person</span><span class="p">(</span><span class="c1">// コンストラクタの引数</span>
+        <span class="n">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span>
+        <span class="n">age</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// フィールドの定義</span>
+    <span class="kd">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="n">name</span><span class="c1">// フィールドの初期化</span>
+    <span class="kd">val</span> <span class="py">age</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="n">age</span><span class="c1">// フィールドの初期化</span>
+
+    <span class="c1">// メソッドの定義</span>
+    <span class="k">fun</span> <span class="n">introduce</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">"My name is $name. I am $age years old."</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">mpcMan</span> <span class="p">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">"MPC-Man"</span><span class="p">,</span> <span class="m">24</span><span class="p">)</span><span class="c1">// コンストラクタの呼び出し</span>
+
+    <span class="c1">// フィールドの参照</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"mpcMan.name = ${mpcMan.name}"</span><span class="p">)</span> <span class="c1">// mpcMan.name = MPC-Man</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"mpcMan.age = ${mpcMan.age}"</span><span class="p">)</span> <span class="c1">// mpcMan.age = 24</span>
+
+    <span class="c1">// メソッドの呼び出し</span>
+    <span class="n">mpcMan</span><span class="p">.</span><span class="n">introduce</span><span class="p">()</span> <span class="c1">// My name is MPC-Man. I am 24 years old.</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<p>以下はその実行結果です．</p>
+
+<figure class="highlight">
+  <pre><code class="language-none" data-lang="none">mpcMan.name = MPC-Man
+mpcMan.age = 24
+My name is MPC-Man. I am 24 years old.</code></pre>
+</figure>
+
+<h2 id="クラスの定義">クラスの定義</h2>
+<p>以下はクラス定義の構文です．</p>
+<pre><code class="language-kt">class クラス名(コンストラクタの引数,・・・) {
+    フィールドやメソッドなど
+}
+</code></pre>
+<p>フィールドは変数と同じように書き，コンストラクタの引数で初期化することができます．</p>
+
+<p>メソッドは関数と同じように書きます．
+メソッドの処理では引数の他にフィールドを参照することができます．</p>
+
+<p>コンストラクタは <code class="highlighter-rouge">クラス名</code> の後に書かれた引数を受け取り，インスタンスを生成して返す関数です．
+コンストラクタの関数名と返り値の型は <code class="highlighter-rouge">クラス名</code> と同じになります．</p>
+
+<h2 id="インスタンス生成">インスタンス生成</h2>
+<p>以下はインスタンスを生成し，変数を初期化する構文です．</p>
+<pre><code class="language-kt">// コンストラクタを呼び出してインスタンスを生成
+// 生成したインスタンスを初期値として変数を定義
+val 変数 = クラス名(引数, ・・・)
+</code></pre>
+<p>以下のように <code class="highlighter-rouge">.</code> を用いることでインスタンスが持つフィールドの値を参照したり，メソッドを呼び出したりすることができます．</p>
+<pre><code class="language-kt">// フィールドを参照
+変数.フィールド名
+
+// メソッドを呼び出す
+変数.メソッド名(引数, ・・・)
+</code></pre>
+
+<p>また，サンプルプログラム1の <code class="highlighter-rouge">Person</code> クラスの定義は以下のように省略できます．</p>
+<pre><code class="language-kt">// Personクラスの定義
+class Person(// コンストラクタの引数で直接フィールドを初期化
+        val name: String,
+        val age: Int) {
+
+    // メソッドの定義
+    fun introduce() {
+        println("My name is $name. I am $age years old.")
+    }
+}
+</code></pre>
+
+<h2 id="まとめ">まとめ</h2>
+
+<ol>
+  <li>クラスはコンストラクタ，フィールド，メソッドを持った型である．</li>
+  <li>コンストラクタはインスタンスを生成する特別な関数である．</li>
+  <li>フィールドは変数と，メソッドは関数と似ている．</li>
+</ol>
+
+<h2 id="練習-1">練習 1</h2>
+<ol>
+  <li>下のソースコード内の変数 <code class="highlighter-rouge">a</code>, <code class="highlighter-rouge">b</code>, <code class="highlighter-rouge">c</code>, <code class="highlighter-rouge">t</code>, <code class="highlighter-rouge">area</code> の型を答えてください．</li>
+  <li>下のソースコードの実行結果を予想してください．</li>
+</ol>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.classes</span>
+
+<span class="k">import</span> <span class="nn">kotlin.math.sqrt</span>
+
+<span class="c1">// 平面上の点を表すクラス</span>
+<span class="kd">data class</span> <span class="nc">Point</span><span class="p">(</span><span class="kd">val</span> <span class="py">x</span><span class="p">:</span> <span class="n">Double</span><span class="p">,</span> <span class="kd">val</span> <span class="py">y</span><span class="p">:</span> <span class="n">Double</span><span class="p">)</span>
+
+<span class="c1">// 2点間の距離を計算する関数</span>
+<span class="k">fun</span> <span class="n">distance</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span> <span class="n">Point</span><span class="p">):</span> <span class="n">Double</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">p</span><span class="p">.</span><span class="n">x</span> <span class="p">-</span> <span class="n">q</span><span class="p">.</span><span class="n">x</span><span class="p">)*(</span><span class="n">p</span><span class="p">.</span><span class="n">x</span> <span class="p">-</span> <span class="n">q</span><span class="p">.</span><span class="n">x</span><span class="p">)</span> <span class="p">+</span> <span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">y</span> <span class="p">-</span> <span class="n">q</span><span class="p">.</span><span class="n">y</span><span class="p">)*(</span><span class="n">p</span><span class="p">.</span><span class="n">y</span> <span class="p">-</span> <span class="n">q</span><span class="p">.</span><span class="n">y</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="c1">// 平面上の三角形を表すクラス</span>
+<span class="kd">class</span> <span class="nc">Triangle</span><span class="p">(</span><span class="kd">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="kd">val</span> <span class="py">b</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="kd">val</span> <span class="py">c</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="n">area</span><span class="p">():</span> <span class="n">Double</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="py">ab</span> <span class="p">=</span> <span class="n">distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+        <span class="kd">val</span> <span class="py">bc</span> <span class="p">=</span> <span class="n">distance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+        <span class="kd">val</span> <span class="py">ca</span> <span class="p">=</span> <span class="n">distance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+        <span class="kd">val</span> <span class="py">s</span> <span class="p">=</span> <span class="p">(</span><span class="n">ab</span> <span class="p">+</span> <span class="n">bc</span> <span class="p">+</span> <span class="n">ca</span><span class="p">)/</span><span class="m">2.0</span>
+        <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">s</span><span class="p">*(</span><span class="n">s</span> <span class="p">-</span> <span class="n">ab</span><span class="p">)*(</span><span class="n">s</span> <span class="p">-</span> <span class="n">bc</span><span class="p">)*(</span><span class="n">s</span> <span class="p">-</span> <span class="n">ca</span><span class="p">))</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">a</span> <span class="p">=</span> <span class="n">Point</span><span class="p">(</span><span class="m">1.0</span><span class="p">,</span> <span class="m">1.0</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">b</span> <span class="p">=</span> <span class="n">Point</span><span class="p">(</span><span class="m">4.0</span><span class="p">,</span> <span class="m">5.0</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">c</span> <span class="p">=</span> <span class="n">Point</span><span class="p">(</span><span class="m">4.0</span><span class="p">,</span> <span class="m">1.0</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">t</span> <span class="p">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">area</span> <span class="p">=</span> <span class="n">t</span><span class="p">.</span><span class="n">area</span><span class="p">()</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"t.area() = $area"</span><span class="p">)</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<h2 id="練習-2">練習 2</h2>
+<ol>
+  <li>3次元ベクトルを表す <code class="highlighter-rouge">Vector</code> クラスを定義してください．
+<code class="highlighter-rouge">Vector</code> クラスはフィールドとして <code class="highlighter-rouge">x</code>, <code class="highlighter-rouge">y</code>, <code class="highlighter-rouge">z</code> を持ちます．
+また，メソッドとして，
+<code class="highlighter-rouge">a</code> を実数として <code class="highlighter-rouge">a</code> 倍したベクトルを返す <code class="highlighter-rouge">multiply(a: Double): Vector</code>, 
+<code class="highlighter-rouge">v</code> をベクトルとして <code class="highlighter-rouge">v</code> を加えたベクトルを返す <code class="highlighter-rouge">add(v: Vector): Vector</code>
+を持ちます．</li>
+  <li><code class="highlighter-rouge">s = 3.2</code>, <code class="highlighter-rouge">v0 = (1.0, 2.0, 3.0)</code>, <code class="highlighter-rouge">v1 = (-3.0, -1.0, 1.0)</code> とします．
+上で定義したクラスを用いて，<code class="highlighter-rouge">s*v0</code>, <code class="highlighter-rouge">v0 + v1</code> を計算するプログラムを作成してください．</li>
+</ol>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ProgrammingIntroduction/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">プログラミング入門</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">プログラミング入門</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/Jumpaku"><svg class="svg-icon"><use xlink:href="/ProgrammingIntroduction/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Jumpaku</span></a></li><li><a href="https://www.twitter.com/Jumpaku"><svg class="svg-icon"><use xlink:href="/ProgrammingIntroduction/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">Jumpaku</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

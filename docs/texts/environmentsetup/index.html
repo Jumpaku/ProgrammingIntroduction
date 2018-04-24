@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>環境構築 | プログラミング入門</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="環境構築" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://0.0.0.0:4000/ProgrammingIntroduction/texts/environmentsetup/" />
+<meta property="og:url" content="http://0.0.0.0:4000/ProgrammingIntroduction/texts/environmentsetup/" />
+<meta property="og:site_name" content="プログラミング入門" />
+<script type="application/ld+json">
+{"url":"http://0.0.0.0:4000/ProgrammingIntroduction/texts/environmentsetup/","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"環境構築","@type":"WebPage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ProgrammingIntroduction/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/ProgrammingIntroduction/feed.xml" title="プログラミング入門" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ProgrammingIntroduction/">プログラミング入門</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ProgrammingIntroduction/auther/">著者</a><a class="page-link" href="/ProgrammingIntroduction/introduction/">はじめに</a><a class="page-link" href="/ProgrammingIntroduction/overview/">概要</a><a class="page-link" href="/ProgrammingIntroduction/summary/">おわりに</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">環境構築</h1>
+  </header>
+
+  <div class="post-content">
+    <p>ここでは，
+Kotlinでプログラミングをするための環境構築を行い，
+プロジェクトを作成し，
+簡単なサンプルプログラムを実行するまでの作業について解説します．</p>
+
+<h2 id="環境構築">環境構築</h2>
+<p>自分のOSに該当する説明に従って環境構築を行います．</p>
+
+<p>&lt;/style&gt;</p>
+<details>
+  <summary>
+    <p>macOSの場合</p>
+  </summary>
+  <div>
+
+    <h4 id="homebrew">Homebrew</h4>
+    <p>ターミナルを起動して以下を実行し，Homebrewをインストールする．</p>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/bin/ruby <span class="nt">-e</span> <span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">"</span>
+</code></pre></div>    </div>
+
+    <h4 id="java">Java</h4>
+    <p>ターミナルで以下を実行し，Javaをインストールする．</p>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew cask <span class="nb">install </span>java
+</code></pre></div>    </div>
+
+    <h4 id="intellij-idea-ce">IntelliJ IDEA CE</h4>
+    <p>以下のリンクからIntelliJ IDEAのCommunityエディションをダウンロードします．
+<a href="https://www.jetbrains.com/idea/">https://www.jetbrains.com/idea/</a></p>
+
+    <p>その後，<code class="highlighter-rouge">/Application</code> ディレクトリにコピーしてアプリを起動し，指示に従ってセットアップします．</p>
+
+    <p>HomebrewはmacOSのパッケージマネージャの一つで，アプリケーションの管理をするためのプログラムです．
+Javaはプログラミング言語の一つで，Kotlinを利用するために必要となります．
+IntelliJは統合開発環境の一つで，プログラミングをするためのアプリケーションです．</p>
+
+  </div>
+</details>
+
+<details>
+  <summary>
+    <h4 id="windows">Windowsの場合</h4>
+  </summary>
+  <div></div>
+</details>
+
+<details>
+  <summary>
+    <h4 id="ubuntu">Ubuntuの場合</h4>
+  </summary>
+  <div>
+
+    <h3 id="java-1">Java</h3>
+    <p>端末を起動して以下を実行し，Javaをインストールします．</p>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>default-jdk
+</code></pre></div>    </div>
+
+    <h3 id="intellij-idea-ce-1">IntelliJ IDEA CE</h3>
+    <p>以下のリンクからIntelliJ IDEAのCommunityエディションをダウンロードします．</p>
+
+    <p><a href="https://www.jetbrains.com/idea/">https://www.jetbrains.com/idea/</a></p>
+
+    <p>その後，ダウンロードしたファイルを展開し，<code class="highlighter-rouge">bin/idea.sh</code>を起動し，指示に従ってセットアップします．</p>
+
+    <p>Javaはプログラミング言語の一つで，Kotlinを利用するために必要となります．
+IntelliJは統合開発環境の一つで，プログラミングをするためのアプリケーションです．</p>
+  </div>
+</details>
+
+<h2 id="プロジェクト作成">プロジェクト作成</h2>
+<p>プロジェクトとは一つの開発における設定ファイルやソースコードをまとめたものです．</p>
+
+<p>以下はプロジェクトの作成手順です．</p>
+<ol>
+  <li>IntelliJを起動する．</li>
+  <li>[File]–&gt;[New]–&gt;[Project…]と選択する．</li>
+  <li>[Kotlin]–&gt;[Kotlin/JVM]と選択し，[Next]ボタンを押す．</li>
+  <li>プロジェクト名(ここでは <code class="highlighter-rouge">ProgramingIntroduction</code> )を入力し，[Finish]ボタンを押す．</li>
+</ol>
+
+<p>説明だけでは伝わらないため，以下にその操作例の動画を示します．</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BV8Xa2nfn3c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+<p>以上より，<code class="highlighter-rouge">~/IdeaProjects/ProgramingIntroduction/</code> というディレクトリが作成されます．
+このディレクトリが本文書で使用するプロジェクトとなります．</p>
+
+<h2 id="サンプルプログラム">サンプルプログラム</h2>
+<p>以下のソースコードを作成してください．</p>
+
+<figure class="highlight">
+  <pre><code class="language-kotlin" data-lang="kotlin"><span class="c1">// パッケージ宣言</span>
+<span class="k">package</span> <span class="nn">jumpaku.programming.environmentsetup</span>
+
+<span class="c1">// main関数</span>
+<span class="k">fun</span> <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="c1">// println関数</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"プログラミング入門"</span><span class="p">)</span>
+<span class="p">}</span></code></pre>
+</figure>
+
+<p>その後，このプログラムを実行(Run)します．
+すると，コンパイルと実行が行われ，以下の行が出力されます．</p>
+
+<figure class="highlight">
+  <pre><code class="language-none" data-lang="none">プログラミング入門</code></pre>
+</figure>
+
+<p>説明だけでは伝わらないため，以下にその操作例の動画を示します．</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/524AHnC9l9Y?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+<h2 id="サンプルプログラムの説明">サンプルプログラムの説明</h2>
+<p>上のプログラムを説明します．
+この段階で以下の説明を理解できない場合は，
+そういうおまじないだと思っていただいても問題無いと思います．</p>
+
+<h3 id="コメントアウト">コメントアウト</h3>
+<p><code class="highlighter-rouge">//</code> を書くとその行の <code class="highlighter-rouge">//</code> 以降の部分はコンパイル時に無視されます．
+これをコメントアウトと呼びます．
+コメントアウトすることで，ソースコードに説明を付けることができます．
+<code class="highlighter-rouge">/*</code> と <code class="highlighter-rouge">*/</code>で囲むことで行を跨いでコメントアウトすることができます．</p>
+
+<h3 id="パッケージ">パッケージ</h3>
+<p>パッケージとはソースコードが所属する「まとまり」のことで，
+名前の衝突を防いだり，関連するファイルをまとめるために使用されます．
+以下はパッケージを指定する構文です．</p>
+<pre><code class="language-kt">package パッケージ名
+</code></pre>
+<p>パッケージ指定はファイルの一番上でに書きます．</p>
+
+<h3 id="main関数">main関数</h3>
+<p>プログラムは <code class="highlighter-rouge">main</code> 関数から始まります．
+関数について詳しくは<a href="Functions.md"> 関数 </a>で説明します．</p>
+
+<h3 id="println関数">println関数</h3>
+<p><code class="highlighter-rouge">println</code> 関数はターミナルに文字列を出力するために使用する関数です．
+出力する内容を <code class="highlighter-rouge">(</code> と <code class="highlighter-rouge">)</code> の間に書きます．
+<code class="highlighter-rouge">"</code>, <code class="highlighter-rouge">"</code> で囲まれたものを文字列と呼びます．</p>
+
+<h2 id="まとめ">まとめ</h2>
+<ol>
+  <li>本文書ではKotlinでプログラミングするために以下を準備する必要があります．
+    <ul>
+      <li>JDK</li>
+      <li>IntelliJ</li>
+    </ul>
+  </li>
+  <li>プロジェクトの作成方法，ソースコードの作成と実行方法を習得しました．</li>
+  <li>プログラムは <code class="highlighter-rouge">main</code> 関数から始まります．</li>
+  <li>ターミナルに実行結果を出力するには <code class="highlighter-rouge">println</code> 関数を利用します．</li>
+</ol>
+
+<h2 id="練習">練習</h2>
+<p><code class="highlighter-rouge">Practice1</code> というプロジェクトを新たに作成し，
+ターミナルに自分の名前を出力するプログラムを作成してください．</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ProgrammingIntroduction/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">プログラミング入門</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">プログラミング入門</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/Jumpaku"><svg class="svg-icon"><use xlink:href="/ProgrammingIntroduction/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Jumpaku</span></a></li><li><a href="https://www.twitter.com/Jumpaku"><svg class="svg-icon"><use xlink:href="/ProgrammingIntroduction/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">Jumpaku</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
