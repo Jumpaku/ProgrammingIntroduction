@@ -1,8 +1,10 @@
-version: "3"
+version: "4"
 services:
   site:
     command: jekyll serve
     image: jekyll/jekyll:latest
+    environment:
+      - JEKYLL_ENV=production
     volumes:
       - .:/srv/jekyll
       - ./vendor/bundle:/usr/local/bundle
