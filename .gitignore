@@ -183,8 +183,7 @@ gradle-app.setting
 \.idea/
 
 ### Jekyll
-jekyll/vendor
+site/vendor
 
 ###
-source.sh
-build.sh
+scripts/*
