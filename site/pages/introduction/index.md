@@ -14,7 +14,7 @@ permalink: /introduction/
 ここで説明されるプログラミングのエッセンスは,
 多くのプログラミング言語で共通したものであり，
 これらの概念を習得していれば，他のプログラミング言語をすぐに習得できます．
-
+本文書で使用するプログラミング言語はKotlinです．
 本文書では，読者が，
 
 * 与えらた処理手順をプログラミング言語で記述できるようになること，
@@ -39,3 +39,8 @@ IDEとしてIntelliJを用いる理由を以下に示します．
 
 * IntelliJを用いるとKotlinのインストールを楽に行える．
 * IntelliJはNetBeansなどの他の統合開発環境より便利である．
+
+## 補足
+内容に不備があった場合や，分かりにくい場合は以下の Issue で教えてください．
+
+[Issue](https://github.com/Jumpaku/ProgrammingIntroduction/issues) 
