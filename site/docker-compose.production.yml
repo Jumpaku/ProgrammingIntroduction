@@ -3,7 +3,7 @@ services:
   site:
     environment:
       - JEKYLL_ENV=production
-    command: jekyll serve
+    command: jekyll build
     image: jekyll/jekyll:latest
     volumes:
       - .:/srv/jekyll
