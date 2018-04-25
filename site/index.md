@@ -1,7 +1,6 @@
 ---
 layout: page
 title: プログラミング入門
-permalink: /
 ---
 本文書は，
 プログラミング初心者が，
