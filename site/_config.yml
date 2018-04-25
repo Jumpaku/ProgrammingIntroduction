@@ -16,9 +16,10 @@
 title: プログラミング入門
 email: 
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  本文書は，
+  プログラミング初心者が，
+  プログラミングのエッセンスを習得するための入門書です．
+  使用するプログラミング言語はKotlinです．
 baseurl: "/ProgrammingIntroduction" # the subpath of your site, e.g. /blog
 url: "http://jumpaku.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 google_analytics: "UA-77155454-3" 
