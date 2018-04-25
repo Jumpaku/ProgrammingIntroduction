@@ -186,4 +186,4 @@ gradle-app.setting
 site/vendor
 
 ###
-scripts/*
+scripts/source.sh
