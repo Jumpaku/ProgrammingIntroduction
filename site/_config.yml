@@ -34,10 +34,10 @@ theme: minima
 plugins:
   - jekyll-feed
 header_pages:
-  - pages/auther/index.md
   - pages/introduction/index.md
   - pages/overview/index.md
   - pages/summary/index.md
+  - pages/author/index.md
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
