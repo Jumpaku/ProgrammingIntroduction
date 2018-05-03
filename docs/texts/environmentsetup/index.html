@@ -91,23 +91,45 @@ IntelliJは統合開発環境の一つで，プログラミングをするため
 
 <details>
   <summary>
-    <h4 id="windows">Windowsの場合</h4>
+    <p>Windowsの場合</p>
   </summary>
-  <div></div>
+  <div>
+
+    <h4 id="chocolatey">Chocolatey</h4>
+    <p>PowerShellを管理として起動して以下を実行し，Chocolateyをインストールする．</p>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Set-ExecutionPolicy Bypass <span class="nt">-Scope</span> Process <span class="nt">-Force</span><span class="p">;</span> iex <span class="o">((</span>New-Object System.Net.WebClient<span class="o">)</span>.DownloadString<span class="o">(</span><span class="s1">'https://chocolatey.org/install.ps1'</span><span class="o">))</span>
+</code></pre></div>    </div>
+
+    <h4 id="java-1">Java</h4>
+    <p>PowerShellで以下を実行し，Javaをインストールする．</p>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>choco <span class="nb">install </span>jdk10 <span class="nt">-y</span>
+</code></pre></div>    </div>
+
+    <h4 id="intellij-idea-ce-1">IntelliJ IDEA CE</h4>
+    <p>以下のリンクからIntelliJ IDEAのCommunityエディションのインストーラをダウンロードします．
+<a href="https://www.jetbrains.com/idea/">https://www.jetbrains.com/idea/</a></p>
+
+    <p>その後，インストーラを起動し，指示に従ってセットアップします．</p>
+
+    <p>ChocolateyはWindowsのパッケージマネージャの一つで，アプリケーションの管理をするためのプログラムです．
+Javaはプログラミング言語の一つで，Kotlinを利用するために必要となります．
+IntelliJは統合開発環境の一つで，プログラミングをするためのアプリケーションです．</p>
+
+  </div>
 </details>
 
 <details>
   <summary>
-    <h4 id="ubuntu">Ubuntuの場合</h4>
+    <p>Ubuntuの場合</p>
   </summary>
   <div>
 
-    <h3 id="java-1">Java</h3>
+    <h3 id="java-2">Java</h3>
     <p>端末を起動して以下を実行し，Javaをインストールします．</p>
     <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>default-jdk
 </code></pre></div>    </div>
 
-    <h3 id="intellij-idea-ce-1">IntelliJ IDEA CE</h3>
+    <h3 id="intellij-idea-ce-2">IntelliJ IDEA CE</h3>
     <p>以下のリンクからIntelliJ IDEAのCommunityエディションをダウンロードします．</p>
 
     <p><a href="https://www.jetbrains.com/idea/">https://www.jetbrains.com/idea/</a></p>
@@ -136,6 +158,10 @@ IntelliJは統合開発環境の一つで，プログラミングをするため
 
 <p>以上より，<code class="highlighter-rouge">~/IdeaProjects/ProgramingIntroduction/</code> というディレクトリが作成されます．
 このディレクトリが本文書で使用するプロジェクトとなります．</p>
+
+<p>Windowsにおいて，4.の時に，Project SDK: が “No SDK” と表示されている場合は以下のフォルダを指定します．</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Program Files\Java\jdk-10.0.1
+</code></pre></div></div>
 
 <h2 id="サンプルプログラム">サンプルプログラム</h2>
 <p>以下のソースコードを作成してください．</p>
