@@ -96,7 +96,7 @@ IntelliJは統合開発環境の一つで，プログラミングをするため
   <div>
 
     <h4 id="chocolatey">Chocolatey</h4>
-    <p>PowerShellを管理として起動して以下を実行し，Chocolateyをインストールする．</p>
+    <p>PowerShellを管理者として起動して以下を実行し，Chocolateyをインストールする．</p>
     <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Set-ExecutionPolicy Bypass <span class="nt">-Scope</span> Process <span class="nt">-Force</span><span class="p">;</span> iex <span class="o">((</span>New-Object System.Net.WebClient<span class="o">)</span>.DownloadString<span class="o">(</span><span class="s1">'https://chocolatey.org/install.ps1'</span><span class="o">))</span>
 </code></pre></div>    </div>
 
@@ -149,7 +149,11 @@ IntelliJは統合開発環境の一つで，プログラミングをするため
   <li>IntelliJを起動する．</li>
   <li>[File]–&gt;[New]–&gt;[Project…]と選択する．</li>
   <li>[Kotlin]–&gt;[Kotlin/JVM]と選択し，[Next]ボタンを押す．</li>
-  <li>プロジェクト名(ここでは <code class="highlighter-rouge">ProgramingIntroduction</code> )を入力し，[Finish]ボタンを押す．</li>
+  <li>プロジェクト名(ここでは <code class="highlighter-rouge">ProgramingIntroduction</code> )を入力し，[Finish]ボタンを押す．
+この時，Windowsにおいて，Project SDK: に “No SDK” と表示されている場合は以下のフォルダを指定します．
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Program Files\Java\jdk-10.0.1
+</code></pre></div>    </div>
+  </li>
 </ol>
 
 <p>説明だけでは伝わらないため，以下にその操作例の動画を示します．</p>
@@ -158,10 +162,6 @@ IntelliJは統合開発環境の一つで，プログラミングをするため
 
 <p>以上より，<code class="highlighter-rouge">~/IdeaProjects/ProgramingIntroduction/</code> というディレクトリが作成されます．
 このディレクトリが本文書で使用するプロジェクトとなります．</p>
-
-<p>Windowsにおいて，4.の時に，Project SDK: が “No SDK” と表示されている場合は以下のフォルダを指定します．</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Program Files\Java\jdk-10.0.1
-</code></pre></div></div>
 
 <h2 id="サンプルプログラム">サンプルプログラム</h2>
 <p>以下のソースコードを作成してください．</p>
