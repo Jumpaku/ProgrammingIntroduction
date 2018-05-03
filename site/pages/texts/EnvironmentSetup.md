@@ -44,15 +44,38 @@ IntelliJは統合開発環境の一つで，プログラミングをするため
 
 <details>
 <summary>
-#### Windowsの場合
+Windowsの場合
 </summary>
 <div>
+
+#### Chocolatey
+PowerShellを管理として起動して以下を実行し，Chocolateyをインストールする．
+```sh
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+```
+
+#### Java
+PowerShellで以下を実行し，Javaをインストールする．
+```sh
+choco install jdk10 -y
+```
+
+#### IntelliJ IDEA CE
+以下のリンクからIntelliJ IDEAのCommunityエディションのインストーラをダウンロードします．
+[https://www.jetbrains.com/idea/](https://www.jetbrains.com/idea/)
+
+その後，インストーラを起動し，指示に従ってセットアップします．
+
+ChocolateyはWindowsのパッケージマネージャの一つで，アプリケーションの管理をするためのプログラムです．
+Javaはプログラミング言語の一つで，Kotlinを利用するために必要となります．
+IntelliJは統合開発環境の一つで，プログラミングをするためのアプリケーションです．
+
 </div>
 </details>
 
 <details>
 <summary>
-#### Ubuntuの場合
+Ubuntuの場合
 </summary>
 <div>
 
@@ -89,6 +112,11 @@ IntelliJは統合開発環境の一つで，プログラミングをするため
 
 以上より，`~/IdeaProjects/ProgramingIntroduction/` というディレクトリが作成されます．
 このディレクトリが本文書で使用するプロジェクトとなります．
+
+Windowsにおいて，4\.の時に，Project SDK: が "No SDK" と表示されている場合は以下のフォルダを指定します．
+```
+C:\Program Files\Java\jdk-10.0.1
+```
 
 ## サンプルプログラム
 以下のソースコードを作成してください．
