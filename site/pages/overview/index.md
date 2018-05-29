@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 概要
+title: 目次
 permalink: /overview/
 ---
 {% include overview.md %}
