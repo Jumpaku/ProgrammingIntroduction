@@ -54,12 +54,12 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
   <div class="post-content">
     <p>リスト，文字列，レンジ等は「複数の同じ型のデータを集めて1列に並べたデータ」と考えることができます．
 このようなデータをコレクションと呼びます．
-コレクションの操作ではLambda式を用いた一括処理を行うことができます．
-Lambda式は関数を簡単に記述するものです．</p>
+コレクションの操作ではラムダ式を用いた一括処理を行うことができます．
+ラムダ式は関数を簡単に記述するものです．</p>
 
-<h2 id="lambda式">Lambda式</h2>
-<p>Lambda式とは関数のように呼び出すことができる処理です．
-以下はLambda式を参照する変数を定義し，Lambda式を呼び出すプログラムです．</p>
+<h2 id="ラムダ式">ラムダ式</h2>
+<p>ラムダ式とは関数のように呼び出すことができる処理です．
+以下はラムダ式を参照する変数を定義し，ラムダ式を呼び出すプログラムです．</p>
 
 <figure class="highlight">
   <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.collections</span>
@@ -79,16 +79,16 @@ Lambda式は関数を簡単に記述するものです．</p>
   <pre><code class="language-none" data-lang="none">averageLambda(5.0, 6.0) = 5.5</code></pre>
 </figure>
 
-<p>以下はLambda式の構文です．</p>
+<p>以下はラムダ式の構文です．</p>
 <pre><code class="language-kt">{ 仮引数名: 仮引数の型,・・・ -&gt; 処理 }
 </code></pre>
-<p>Lambda式は処理の最後に記述された値を返します．
-また，Lambda式の型は <code class="highlighter-rouge">(引数の型,・・・) -&gt; 返り値の型</code> となります．
+<p>ラムダ式は処理の最後に記述された値を返します．
+また，ラムダ式の型は <code class="highlighter-rouge">(引数の型,・・・) -&gt; 返り値の型</code> となります．
 例えば，<code class="highlighter-rouge">{ x: Double -&gt; x*2.0 }</code> の型は <code class="highlighter-rouge">(Double)-&gt;Double</code> となります．
-Lambda式の引数の型を推論できる場合は <code class="highlighter-rouge">: 仮引数の型</code> を省略できます．</p>
+ラムダ式の引数の型を推論できる場合は <code class="highlighter-rouge">: 仮引数の型</code> を省略できます．</p>
 
-<p>引数の無いLambda式は単に <code class="highlighter-rouge">{ 処理 }</code> と記述します．
-引数が一つのLambda式は引数を省略して <code class="highlighter-rouge">{ 処理 }</code> と記述することができます．
+<p>引数の無いラムダ式は単に <code class="highlighter-rouge">{ 処理 }</code> と記述します．
+引数が一つのラムダ式は引数を省略して <code class="highlighter-rouge">{ 処理 }</code> と記述することができます．
 このとき，<code class="highlighter-rouge">処理</code> の中で引数を使用する場合は <code class="highlighter-rouge">it</code> を使用します．
 例えば，</p>
 <pre><code class="language-kt">val times2: (Double)-&gt;Double = { x -&gt; x*2.0 }
@@ -98,7 +98,7 @@ Lambda式の引数の型を推論できる場合は <code class="highlighter-rou
 </code></pre>
 <p>と記述することができます．</p>
 
-<p>簡単な処理であれば，関数を定義するより，Lambda式で記述した方がソースコードがシンプルになります．</p>
+<p>簡単な処理であれば，関数を定義するより，ラムダ式で記述した方がソースコードがシンプルになります．</p>
 
 <h2 id="コレクションの操作">コレクションの操作</h2>
 <p>ここではコレクションの基本的な操作として，
@@ -107,7 +107,7 @@ Lambda式の引数の型を推論できる場合は <code class="highlighter-rou
 <h3 id="foreach">forEach</h3>
 <p><code class="highlighter-rouge">forEach</code> メソッドはコレクションの全ての要素に対して，
 引数で受け取った処理を実行するメソッドです．
-以下は条件によって分岐する処理を表す図です．</p>
+以下は <code class="highlighter-rouge">forEach</code> の処理を表す図です．</p>
 
 <p><img src="/ProgrammingIntroduction/images/texts/foreach.png" alt="" /></p>
 
@@ -134,7 +134,7 @@ Lambda式の引数の型を推論できる場合は <code class="highlighter-rou
 <h3 id="map">map</h3>
 <p><code class="highlighter-rouge">map</code> メソッドはコレクションの全ての要素に対して，
 引数で受け取った処理を実行し，実行結果を要素とする新たなコレクションを返すメソッドです．
-以下は条件によって分岐する処理を表す図です．</p>
+以下は <code class="highlighter-rouge">map</code> の処理を表す図です．</p>
 
 <p><img src="/ProgrammingIntroduction/images/texts/map.png" alt="" /></p>
 
@@ -163,7 +163,7 @@ Lambda式の引数の型を推論できる場合は <code class="highlighter-rou
 <p><code class="highlighter-rouge">filter</code> メソッドはコレクションの全ての要素に対して，
 引数で受け取った条件を満たすものだけを取り出し，
 これら要素とする新たなコレクションを返すメソッドです．
-以下は条件によって分岐する処理を表す図です．</p>
+以下は <code class="highlighter-rouge">filter</code> の処理を表す図です．</p>
 
 <p><img src="/ProgrammingIntroduction/images/texts/filter.png" alt="" /></p>
 
@@ -187,10 +187,9 @@ Lambda式の引数の型を推論できる場合は <code class="highlighter-rou
 </figure>
 
 <h3 id="fold">fold</h3>
-<p><code class="highlighter-rouge">fold</code> メソッドはコレクションの全ての要素に対して，
-引数で受け取った条件を満たすものだけを取り出し，
-これら要素とする新たなコレクションを返すメソッドです．
-以下は条件によって分岐する処理を表す図です．</p>
+<p><code class="highlighter-rouge">fold</code> メソッドはコレクションの要素を端から順番に合成し，
+最終結果を返すメソッドです．
+以下は <code class="highlighter-rouge">fold</code> の処理を表す図です．</p>
 
 <p><img src="/ProgrammingIntroduction/images/texts/fold.png" alt="" /></p>
 
@@ -215,7 +214,7 @@ Lambda式の引数の型を推論できる場合は <code class="highlighter-rou
 <h2 id="練習-1">練習 1</h2>
 <p>下のソースコードは<code class="highlighter-rouge">1</code> から <code class="highlighter-rouge">20</code> までの整数に対して，
 それが <code class="highlighter-rouge">15</code> の倍数なら <code class="highlighter-rouge">"FizzBuzz"</code>, <code class="highlighter-rouge">5</code> の倍数なら <code class="highlighter-rouge">"Buzz"</code>, <code class="highlighter-rouge">3</code> の倍数なら <code class="highlighter-rouge">"Fizz"</code>, それ以外ならその数字を表示するプログラムです．
-<code class="highlighter-rouge">/* Lambda式 */</code> の部分を埋めてプログラムを完成させてください．</p>
+<code class="highlighter-rouge">/* ラムダ式 */</code> の部分を埋めてプログラムを完成させてください．</p>
 
 <figure class="highlight">
   <pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">jumpaku.programming.collections</span>
